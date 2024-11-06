@@ -6,18 +6,30 @@ type HomePageProps = {
 };
 
 const HomePage: React.FC<HomePageProps> = ({
-  title = 'Welcome to Gurdwara Siri Guru Singh Sabha Mombasa,
+  title = 'Welcome to Gurdwara Siri Guru Singh Sabha Mombasa',
   content = 'Discover our community and events.',
 }) => {
   const images = [
-    './assets'
+    '/assets/images/temple/fron.jpg',
+    '/assets/images/temple/ga.jpg',
+    '/assets/images/temple/inside1.jpg',
+    '/assets/images/temple/side1.jpg',
+    '/assets/images/temple/up1.jpg',
+    '/assets/images/temple/in1.jpg',
+    '/assets/images/temple/hallwa.jpg',
+    '/assets/images/temple/nigh.jpg',
+    '/assets/images/temple/nigh2.jpg',
+    '/assets/images/temple/al1.jpg',
+    '/assets/images/temple/al2.jpg',
+    '/assets/images/temple/al3.jpg',
+    '/assets/images/temple/name.jpg',
   ];
   const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prevImage) => (prevImage + 1) % images.length);
-    }, 5000); // Change image every 5 seconds
+    }, 2000); // Change image every 2 seconds
 
     return () => clearInterval(interval); // Clean up interval on component unmount
   }, [images.length]);
