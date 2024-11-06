@@ -9,7 +9,6 @@ type HomePageProps = {
 const HomePage: React.FC<HomePageProps> = ({
   title = 'Welcome to Gurdwara Siri Guru Singh Sabha Mombasa',
   content = 'Discover our community and events.',
-  
 }) => {
   const images = [
     '/src/assets/images/temple/name.jpg',
@@ -113,7 +112,14 @@ const HomePage: React.FC<HomePageProps> = ({
             </button>
           </>
         ) : (
-          
+          // Display link to the About page after keyboard navigation
+          <button
+            onClick={navigateToAboutPage}
+            className="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 focus:outline-none"
+            aria-label="Go to About Page"
+          >
+            Go to About Page
+          </button>
         )}
       </div>
 
