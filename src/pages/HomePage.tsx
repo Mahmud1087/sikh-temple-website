@@ -25,23 +25,57 @@ const HomePage: React.FC<HomePageProps> = ({
     '/assets/images/temple/name.jpg',
   ];
   const [currentImage, setCurrentImage] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
+  // Automatic slideshow with pause on manual control
   useEffect(() => {
+    if (isPaused) return;
+
     const interval = setInterval(() => {
       setCurrentImage((prevImage) => (prevImage + 1) % images.length);
-    }, 2000); // Change image every 2 seconds
+    }, 3000); // Change image every 3 seconds
 
     return () => clearInterval(interval); // Clean up interval on component unmount
-  }, [images.length]);
+  }, [images.length, isPaused]);
+
+  // Manually go to the previous or next image
+  const handlePrev = () => {
+    setCurrentImage((prevImage) => (prevImage - 1 + images.length) % images.length);
+    setIsPaused(true); // Pause the slideshow temporarily
+    setTimeout(() => setIsPaused(false), 5000); // Resume after 5 seconds
+  };
+
+  const handleNext = () => {
+    setCurrentImage((prevImage) => (prevImage + 1) % images.length);
+    setIsPaused(true); // Pause the slideshow temporarily
+    setTimeout(() => setIsPaused(false), 5000); // Resume after 5 seconds
+  };
 
   return (
     <div
-      className="flex flex-col items-center justify-center min-h-screen bg-cover bg-center transition-all duration-700 ease-in-out"
+      className="relative flex flex-col items-center justify-center min-h-screen bg-cover bg-center transition-all duration-700 ease-in-out"
       style={{ backgroundImage: `url(${images[currentImage]})` }}
+      aria-label="Slideshow of the Sikh Temple"
     >
       <div className="bg-black bg-opacity-50 p-8 rounded-lg text-center">
         <h1 className="text-4xl font-bold text-orange-600 mb-4">{title}</h1>
         <p className="text-lg text-gray-100">{content}</p>
+      </div>
+      
+      {/* Controls */}
+      <div className="absolute bottom-8 flex space-x-4">
+        <button
+          onClick={handlePrev}
+          className="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 focus:outline-none"
+        >
+          Previous
+        </button>
+        <button
+          onClick={handleNext}
+          className="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 focus:outline-none"
+        >
+          Next
+        </button>
       </div>
     </div>
   );
