@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const AboutPage = () => {
-  const images = [
+  const images = useMemo(() => [
     //{ src: 'src/assets/images/temple/inside1.jpg', alt: 'Inside of the temple', description: 'Darbar Sahib & Manji Sahib' },
     //{ src: 'src/assets/images/temple/ga.jpg', alt: 'Temple grounds', description: 'The serene temple grounds' },
     //{ src: 'src/assets/images/temple/nigh.jpg', alt: 'Temple at night', description: 'Temple illuminated at night' },
@@ -14,7 +14,7 @@ const AboutPage = () => {
     { src: '/src/assets/images/temple/up1.jpg', alt: 'Top view', description: 'A top view of the temple grounds' },
     //{ src: '/src/assets/images/temple/hallwa.jpg', alt: 'Hallway inside temple', description: 'A view inside the temple hallway' },
     // Add more images as necessary
-  ];
+  ], []);
 
   const [loading, setLoading] = useState(true);
 
@@ -23,7 +23,7 @@ const AboutPage = () => {
     const img = new Image();
     img.src = images[0].src;
     img.onload = () => setLoading(false);
-  }, []);
+  }, [images]);
 
   return (
     <div className="bg-gray-900 py-10">
@@ -132,3 +132,5 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
+import { useMemo } from 'react';
+
