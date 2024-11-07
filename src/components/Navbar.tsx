@@ -35,8 +35,8 @@ const Navbar = () => {
               <Link to="/gallery" className={getLinkClass('/gallery')}>Gallery</Link>
             </li>
           </ul>
-          <div className="relative">
-            <button className="absolute left-1 top-0 p-1 text-white bg-orange-600 "
+          <div className="relative ">
+            <button className="absolute left-1 top-0 p-2 text-white bg-orange-600 rounded-full center"
             onClick={() => window.location.href = "https://maps.app.goo.gl/nRY96BKSSgZhzUzV9"}
             >
               Visit
