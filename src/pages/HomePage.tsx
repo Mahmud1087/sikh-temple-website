@@ -29,7 +29,6 @@ const HomePage: React.FC<HomePageProps> = ({
   const [currentImage, setCurrentImage] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const navigate = useNavigate(); // To handle navigation
-  //const [isKeyboardNavigation, setIsKeyboardNavigation] = useState(false);
 
   // Automatic slideshow with pause on manual control
   useEffect(() => {
@@ -58,15 +57,17 @@ const HomePage: React.FC<HomePageProps> = ({
   // Handle keyboard navigation
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'ArrowLeft') {
-        handlePrev();
-        setIsKeyboardNavigation(true); // Enable keyboard navigation
-      } else if (event.key === 'ArrowRight') {
-        handleNext();
-        setIsKeyboardNavigation(true); // Enable keyboard navigation
+      switch (event.key) {
+        case 'ArrowLeft':
+          handlePrev();
+          break;
+        case 'ArrowRight':
+          handleNext();
+          break;
+        default:
+          break;
       }
     };
-
     // Add event listener for keydown
     window.addEventListener('keydown', handleKeyDown);
 
