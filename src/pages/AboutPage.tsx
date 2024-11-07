@@ -9,17 +9,17 @@ const AboutPage = () => {
       {/* Page Header */}
       <MaxWidthWrapper>
         <div className="text-center">
-          <motion.h1 
-            className="text-4xl font-bold text-orange-600 mb-4" 
-            initial={{ opacity: 0 }} 
-            animate={{ opacity: 1 }} 
+          <motion.h1
+            className="text-4xl font-bold text-orange-600 mb-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}>
             About Gurdwara Siri Guru Singh Sabha Mombasa
           </motion.h1>
-          <motion.p 
-            className="text-lg text-gray-700 mb-6" 
-            initial={{ opacity: 0 }} 
-            animate={{ opacity: 1 }} 
+          <motion.p
+            className="text-lg text-gray-700 mb-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 1 }}>
             Welcome to our temple! We are a community of Sikhs based in Mombasa, committed to service, compassion, and spiritual growth.
           </motion.p>
@@ -28,12 +28,17 @@ const AboutPage = () => {
 
       {/* Mission and Vision */}
       <MaxWidthWrapper>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
           <div className="space-y-4">
-            <motion.h2 
-              className="text-2xl font-semibold text-gray-800" 
-              initial={{ opacity: 0 }} 
-              animate={{ opacity: 1 }} 
+            <motion.h2
+              className="text-2xl font-semibold text-gray-800"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 1 }}>
               Our Mission
             </motion.h2>
@@ -42,10 +47,10 @@ const AboutPage = () => {
             </p>
           </div>
           <div className="space-y-4">
-            <motion.h2 
-              className="text-2xl font-semibold text-gray-800" 
-              initial={{ opacity: 0 }} 
-              animate={{ opacity: 1 }} 
+            <motion.h2
+              className="text-2xl font-semibold text-gray-800"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 1 }}>
               Our Vision
             </motion.h2>
@@ -53,21 +58,42 @@ const AboutPage = () => {
               We aim to inspire and unite people of all backgrounds by providing a space for worship, community support, and charitable activities.
             </p>
           </div>
-        </div>
+        </motion.div>
       </MaxWidthWrapper>
 
-      {/* Image Gallery or Map Section */}
+      {/* Image Gallery or Map Section with hover effects */}
       <MaxWidthWrapper>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-          <div className="group">
-            <img src="/src/assets/images/temple/inside1.jpg" alt="Inside of the temple" className="w-full h-60 object-cover rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-300" />
-          </div>
-          <div className="group">
-            <img src="/src/assets/images/temple/ga.jpg" alt="Gurdwara grounds" className="w-full h-60 object-cover rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-300" />
-          </div>
-          <div className="group">
-            <img src="/src/assets/images/temple/nigh.jpg" alt="Temple at night" className="w-full h-60 object-cover rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-300" />
-          </div>
+          <motion.div
+            className="group"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}>
+            <img
+              src="src/assets/images/temple/inside1.jpg"
+              alt="Inside of the temple"
+              className="w-full h-60 object-cover rounded-lg shadow-lg transition-transform duration-300"
+            />
+          </motion.div>
+          <motion.div
+            className="group"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}>
+            <img
+              src="src/assets/images/temple/ga.jpg"
+              alt="Gurdwara grounds"
+              className="w-full h-60 object-cover rounded-lg shadow-lg transition-transform duration-300"
+            />
+          </motion.div>
+          <motion.div
+            className="group"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}>
+            <img
+              src="src/assets/images/temple/nigh.jpg"
+              alt="Temple at night"
+              className="w-full h-60 object-cover rounded-lg shadow-lg transition-transform duration-300"
+            />
+          </motion.div>
         </div>
       </MaxWidthWrapper>
 
