@@ -1,6 +1,6 @@
 const Footer: React.FC = () => {
     return (
-      <footer className="bg-black text-white py-8 mt-10">
+      <footer className="bg-black text-white py-8 ">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
           {/* Logo */}
           <div className="text-center md:text-left mb-4 md:mb-0">
