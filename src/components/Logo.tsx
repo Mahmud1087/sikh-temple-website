@@ -7,7 +7,7 @@ type LogoProps = {
 };
 
 const Logo: React.FC<LogoProps> = ({
-  imageSrc = './public/logo2.jpeg',
+  imageSrc = '/logo2.jpeg',
   altText = 'Logo',
   text = 'Sikh Temple',
 }) => {
