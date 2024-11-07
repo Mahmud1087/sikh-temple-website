@@ -5,14 +5,14 @@ import { motion } from 'framer-motion';
 
 const AboutPage = () => {
   const images = [
-    //{ src: 'src/assets/images/inside1.jpg', alt: 'Inside of the temple', description: 'Darbar Sahib & Manji Sahib' },
-    //{ src: 'src/assets/images/ga.jpg', alt: 'Temple grounds', description: 'The serene temple grounds' },
-    //{ src: 'src/assets/images/nigh.jpg', alt: 'Temple at night', description: 'Temple illuminated at night' },
-    { src: '/src/assets/images/name.jpg', alt: 'Temple name', description: 'Sign with temple name' },
-    { src: '/src/assets/images/fron.jpg', alt: 'Front view of temple', description: 'The front view of the temple' },
-    { src: '/src/assets/images/side1.jpg', alt: 'Side view of temple', description: 'Simran Darbar & Main Darbar (Outside) Langar Hall and Kitchen on Ground Floor' },
-    { src: '/src/assets/images/up1.jpg', alt: 'Top view', description: 'A top view of the temple grounds' },
-    //{ src: '/src/assets/images/hallwa.jpg', alt: 'Hallway inside temple', description: 'A view inside the temple hallway' },
+    //{ src: '/images/inside1.jpg', alt: 'Inside of the temple', description: 'Darbar Sahib & Manji Sahib' },
+    //{ src: '/images/ga.jpg', alt: 'Temple grounds', description: 'The serene temple grounds' },
+    //{ src: '/images/nigh.jpg', alt: 'Temple at night', description: 'Temple illuminated at night' },
+    { src: '/images/name.jpg', alt: 'Temple name', description: 'Sign with temple name' },
+    { src: '/images/fron.jpg', alt: 'Front view of temple', description: 'The front view of the temple' },
+    { src: '/images/side1.jpg', alt: 'Side view of temple', description: 'Simran Darbar & Main Darbar (Outside) Langar Hall and Kitchen on Ground Floor' },
+    { src: '/images/up1.jpg', alt: 'Top view', description: 'A top view of the temple grounds' },
+    //{ src: '/images/hallwa.jpg', alt: 'Hallway inside temple', description: 'A view inside the temple hallway' },
     // Add more images as necessary
   ];
 
