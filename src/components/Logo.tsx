@@ -7,7 +7,8 @@ type LogoProps = {
 };
 
 const Logo: React.FC<LogoProps> = ({
-  imageSrc = '/logo2.jpeg',
+  imageSrc = '/sikhism-logo.png',
+  // imageSrc = '/logo2.jpeg',
   altText = 'Logo',
   text = 'Sikh Temple',
 }) => {
@@ -17,7 +18,7 @@ const Logo: React.FC<LogoProps> = ({
         <img
           src={imageSrc}
           alt={altText}
-          className='w-12 h-12 md:w-16 md:h-16'
+          className='w-10 h-10 sm:h-12 sm:w-12'
         />
       ) : (
         <div className='text-2xl font-bold text-blue-600 md:text-3xl'>
