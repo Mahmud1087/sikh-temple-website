@@ -11,19 +11,19 @@ const HomePage: React.FC<HomePageProps> = ({
   content = 'Discover our community and events.',
 }) => {
   const images = [
-    '/src/assets/images/temple/name.jpg',
-    '/src/assets/images/temple/fron.jpg',
-    '/src/assets/images/temple/ga.jpg',
-    '/src/assets/images/temple/inside1.jpg',
-    '/src/assets/images/temple/side1.jpg',
-    '/src/assets/images/temple/up1.jpg',
-    '/src/assets/images/temple/in1.jpg',
-    '/src/assets/images/temple/hallwa.jpg',
-    '/src/assets/images/temple/nigh.jpg',
-    '/src/assets/images/temple/nigh2.jpg',
-    '/src/assets/images/temple/al1.jpg',
-    '/src/assets/images/temple/al2.jpg',
-    '/src/assets/images/temple/al3.jpg',
+    '/src/assets/images/name.jpg',
+    '/src/assets/images/fron.jpg',
+    '/src/assets/images/ga.jpg',
+    '/src/assets/images/inside1.jpg',
+    '/src/assets/images/side1.jpg',
+    '/src/assets/images/up1.jpg',
+    '/src/assets/images/in1.jpg',
+    '/src/assets/images/hallwa.jpg',
+    '/src/assets/images/nigh.jpg',
+    '/src/assets/images/nigh2.jpg',
+    '/src/assets/images/al1.jpg',
+    '/src/assets/images/al2.jpg',
+    '/src/assets/images/al3.jpg',
   ];
 
   const [currentImage, setCurrentImage] = useState(0);
