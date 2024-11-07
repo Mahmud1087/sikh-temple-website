@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import MaxWidthWrapper from '../components/MaxWidthWrapper';
 import { motion } from 'framer-motion';
 

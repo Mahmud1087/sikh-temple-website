@@ -3,6 +3,7 @@ import Logo from './Logo';
 import MaxWidthWrapper from './MaxWidthWrapper';
 import { useState } from 'react';
 
+
 const Navbar = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
