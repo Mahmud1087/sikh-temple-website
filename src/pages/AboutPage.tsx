@@ -44,7 +44,7 @@ const AboutPage = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            Welcome to our temple! We are a community of Sikhs based in Mombasa, committed to service, compassion, and spiritual growth.
+            Welcome to Gurdwara! We are a community of Sikhs based in Mombasa, committed to service, compassion, and spiritual growth.
           </motion.p>
         </div>
       </MaxWidthWrapper>
