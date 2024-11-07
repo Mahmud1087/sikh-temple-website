@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import MaxWidthWrapper from '../components/MaxWidthWrapper';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -23,7 +23,7 @@ const AboutPage = () => {
     const img = new Image();
     img.src = images[0].src;
     img.onload = () => setLoading(false);
-  }, []);
+  }, );
 
   return (
     <div className="bg-gray-900 py-10">
