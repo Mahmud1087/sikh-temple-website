@@ -1,9 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import MaxWidthWrapper from '../components/MaxWidthWrapper';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const AboutPage = () => {
+  const images = [
+    //{ src: 'src/assets/images/temple/inside1.jpg', alt: 'Inside of the temple', description: 'Darbar Sahib & Manji Sahib' },
+    //{ src: 'src/assets/images/temple/ga.jpg', alt: 'Temple grounds', description: 'The serene temple grounds' },
+    //{ src: 'src/assets/images/temple/nigh.jpg', alt: 'Temple at night', description: 'Temple illuminated at night' },
+    { src: '/src/assets/images/temple/name.jpg', alt: 'Temple name', description: 'Sign with temple name' },
+    { src: '/src/assets/images/temple/fron.jpg', alt: 'Front view of temple', description: 'The front view of the temple' },
+    { src: '/src/assets/images/temple/side1.jpg', alt: 'Side view of temple', description: 'Simran Darbar & Main Darbar (Outside) Langar Hall and Kitchen on Ground Floor' },
+    { src: '/src/assets/images/temple/up1.jpg', alt: 'Top view', description: 'A top view of the temple grounds' },
+    //{ src: '/src/assets/images/temple/hallwa.jpg', alt: 'Hallway inside temple', description: 'A view inside the temple hallway' },
+    // Add more images as necessary
+  ];
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Preload first image (you can extend to preload all images)
+    const img = new Image();
+    img.src = images[0].src;
+    img.onload = () => setLoading(false);
+  }, []);
+
   return (
     <div className="bg-gray-900 py-10">
       {/* Page Header */}
@@ -13,14 +34,16 @@ const AboutPage = () => {
             className="text-4xl font-bold text-orange-400 mb-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}>
+            transition={{ duration: 0.8 }}
+          >
             About Gurdwara Siri Guru Singh Sabha Mombasa
           </motion.h1>
           <motion.p
             className="text-lg text-gray-300 mb-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}>
+            transition={{ duration: 1 }}
+          >
             Welcome to our temple! We are a community of Sikhs based in Mombasa, committed to service, compassion, and spiritual growth.
           </motion.p>
         </div>
@@ -39,7 +62,8 @@ const AboutPage = () => {
               className="text-2xl font-semibold text-gray-300"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}>
+              transition={{ duration: 1 }}
+            >
               Our Mission
             </motion.h2>
             <p className="text-gray-400">
@@ -51,7 +75,8 @@ const AboutPage = () => {
               className="text-2xl font-semibold text-gray-300"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}>
+              transition={{ duration: 1 }}
+            >
               Our Vision
             </motion.h2>
             <p className="text-gray-400">
@@ -63,38 +88,31 @@ const AboutPage = () => {
 
       {/* Image Gallery or Map Section with hover effects */}
       <MaxWidthWrapper>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-          <motion.div
-            className="group"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}>
-            <img
-              src="src/assets/images/temple/inside1.jpg"
-              alt="Inside of the temple"
-              className="w-full h-60 object-cover rounded-lg shadow-lg transition-transform duration-300"
-            />
-          </motion.div>
-          <motion.div
-            className="group"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}>
-            <img
-              src="src/assets/images/temple/ga.jpg"
-              alt="Gurdwara grounds"
-              className="w-full h-60 object-cover rounded-lg shadow-lg transition-transform duration-300"
-            />
-          </motion.div>
-          <motion.div
-            className="group"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}>
-            <img
-              src="src/assets/images/temple/nigh.jpg"
-              alt="Temple at night"
-              className="w-full h-60 object-cover rounded-lg shadow-lg transition-transform duration-300"
-            />
-          </motion.div>
-        </div>
+        {loading ? (
+          <div className="loader text-center text-white">Loading...</div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            {images.map((image, index) => (
+              <motion.div
+                key={index}
+                className="group relative"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+                tabIndex="0" // Allow keyboard navigation
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-60 object-cover rounded-lg shadow-lg transition-transform duration-300"
+                  loading="lazy" // Lazy loading for performance
+                />
+                <p className="caption absolute bottom-2 left-2 text-white bg-black bg-opacity-50 p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {image.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        )}
       </MaxWidthWrapper>
 
       {/* Contact and Further Information */}

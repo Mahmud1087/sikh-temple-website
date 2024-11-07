@@ -59,7 +59,7 @@ const GalleryPage = () => {
                 className="group relative"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
-                tabIndex="0" // Allow keyboard navigation
+                tabIndex={0} // Allow keyboard navigation
               >
                 <img
                   src={image.src}
