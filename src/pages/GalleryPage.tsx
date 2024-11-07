@@ -22,7 +22,7 @@ const GalleryPage = () => {
     const img = new Image();
     img.src = images[0].src; // Preload the first image (or all if needed)
     img.onload = () => setLoading(false);
-  }, []);
+  }, );
 
   return (
     <div className="bg-gray-900 py-10">
