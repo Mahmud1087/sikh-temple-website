@@ -11,19 +11,19 @@ const HomePage: React.FC<HomePageProps> = ({
   content = 'Discover our community and events.',
 }) => {
   const images = [
-    '/src/assets/images/name.jpg',
-    '/src/assets/images/fron.jpg',
-    '/src/assets/images/ga.jpg',
-    '/src/assets/images/inside1.jpg',
-    '/src/assets/images/side1.jpg',
-    '/src/assets/images/up1.jpg',
-    '/src/assets/images/in1.jpg',
-    '/src/assets/images/hallwa.jpg',
-    '/src/assets/images/nigh.jpg',
-    '/src/assets/images/nigh2.jpg',
-    '/src/assets/images/al1.jpg',
-    '/src/assets/images/al2.jpg',
-    '/src/assets/images/al3.jpg',
+    '/public/images/name.jpg',
+    '/public/images/fron.jpg',
+    '/public/images/ga.jpg',
+    '/public/images/inside1.jpg',
+    '/public/images/side1.jpg',
+    '/public/images/up1.jpg',
+    '/public/images/in1.jpg',
+    '/public/images/hallwa.jpg',
+    '/public/images/nigh.jpg',
+    '/public/images/nigh2.jpg',
+    '/public/images/al1.jpg',
+    '/public/images/al2.jpg',
+    '/public/images/al3.jpg',
   ];
 
   const [currentImage, setCurrentImage] = useState(0);
