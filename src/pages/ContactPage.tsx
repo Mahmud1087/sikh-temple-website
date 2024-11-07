@@ -71,7 +71,7 @@ const ContactPage = () => {
               value={formData.message}
               onChange={handleChange}
               required
-              rows="5"
+              rows={5}
               className="w-full px-4 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 bg-gray-700 text-gray-200"
             />
           </div>
