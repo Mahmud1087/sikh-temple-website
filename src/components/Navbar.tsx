@@ -61,8 +61,8 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="absolute top-0 right-0 left-0 bg-blue-2000 text-white w-full p-6 z-30 transition-transform transform">
-          <ul className="flex flex-col space-y-4">
+        <div className="absolute top-0 right-0 left-0 bg-blue-1000 text-white w-full p-6 z-30 flex flex-col items-center transition-transform transform">
+          <ul className="flex flex-col space-y-4 text-center">
             <li>
               <Link to="/" className="block py-2" onClick={toggleMenu}>Home</Link>
             </li>
