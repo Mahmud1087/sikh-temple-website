@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
           {/* Logo */}
           <div className="text-center md:text-left mb-4 md:mb-0">
             <img 
-              src="./public/logo1.jpeg" 
+              src="/logo1.jpeg" 
               alt="Gurdwara Siri Guru Singh Sabha Mombasa Logo" 
               className="h-12 mb-4 mx-auto md:mx-0"
             />
