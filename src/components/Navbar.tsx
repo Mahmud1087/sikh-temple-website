@@ -36,13 +36,10 @@ const Navbar = () => {
             </li>
           </ul>
           <div className="relative">
-            <input
-              type="text"
-              placeholder="Search..."
-              className="px-4 py-2 rounded-lg text-black"
-            />
-            <button className="absolute right-0 top-0 px-4 py-2 text-white bg-orange-600 rounded-r-lg">
-              Search
+            <button className="absolute left-1 top-0 p-1 text-white bg-orange-600 "
+            onClick={() => window.location.href = "https://maps.app.goo.gl/nRY96BKSSgZhzUzV9"}
+            >
+              Visit
             </button>
           </div>
         </div>
