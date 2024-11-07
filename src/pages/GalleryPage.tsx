@@ -4,12 +4,12 @@ import { motion } from 'framer-motion';
 
 const GalleryPage = () => {
   const images = [
-    { src: 'src/assets/images/temple/inside1.jpg', alt: 'Inside of the temple', description: 'Beautiful view inside the temple' },
+    { src: 'src/assets/images/temple/inside1.jpg', alt: 'Inside of the temple', description: 'Darbar Sahib & Manji Sahib' },
     { src: 'src/assets/images/temple/ga.jpg', alt: 'Temple grounds', description: 'The serene temple grounds' },
     { src: 'src/assets/images/temple/nigh.jpg', alt: 'Temple at night', description: 'Temple illuminated at night' },
     { src: '/src/assets/images/temple/name.jpg', alt: 'Temple name', description: 'Sign with temple name' },
     { src: '/src/assets/images/temple/fron.jpg', alt: 'Front view of temple', description: 'The front view of the temple' },
-    { src: '/src/assets/images/temple/side1.jpg', alt: 'Side view of temple', description: 'Side angle of the temple' },
+    { src: '/src/assets/images/temple/side1.jpg', alt: 'Side view of temple', description: 'Simran Darbar & Main Darbar (Outside) Langar Hall and Kitchen on Ground Floor' },
     { src: '/src/assets/images/temple/up1.jpg', alt: 'Top view', description: 'A top view of the temple grounds' },
     { src: '/src/assets/images/temple/hallwa.jpg', alt: 'Hallway inside temple', description: 'A view inside the temple hallway' },
     // Add more images as necessary
