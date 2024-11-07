@@ -89,31 +89,18 @@ const HomePage: React.FC<HomePageProps> = ({
     >
       <div className="bg-black bg-opacity-50 p-8 rounded-lg text-center">
         <h1 className="text-4xl font-bold text-orange-600 mb-4">{title}</h1>
-        <p className="text-lg text-gray-100">{content}</p>
-      </div>
+        <p className="text-lg text-gray-100 mb-4">{content}</p>
 
-      {/* Controls */}
-      <div className="absolute bottom-8 flex space-x-4">
-        {!isKeyboardNavigation ? (
-          <>
-            <button
-            onClick={navigateToAboutPage}
-            className="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 focus:outline-none"
-            aria-label="Go to About Page"
-          >
-            Go to About Page
-          </button>
-          </>
-        ) : (
-          // Display link to the About page after keyboard navigation
+        {/* Controls and buttons */}
+        <div className="flex flex-col items-center space-y-4">
           <button
             onClick={navigateToAboutPage}
-            className="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 focus:outline-none"
+            className="px-6 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 focus:outline-none"
             aria-label="Go to About Page"
           >
-            Go to About Page
+            Discover
           </button>
-        )}
+        </div>
       </div>
 
       {/* Indicators */}
