@@ -43,17 +43,17 @@ const HomePage: React.FC<HomePageProps> = ({
   }, [images.length, isPaused]);
 
   // Manually go to the previous or next image
-  const handlePrev = () => {
+  const handlePrev = React.useCallback(() => {
     setCurrentImage((prevImage) => (prevImage - 1 + images.length) % images.length);
     setIsPaused(true); // Pause the slideshow temporarily
     setTimeout(() => setIsPaused(false), 5000); // Resume after 5 seconds
-  };
+  }, [images.length]);
 
-  const handleNext = () => {
+  const handleNext = React.useCallback(() => {
     setCurrentImage((prevImage) => (prevImage + 1) % images.length);
     setIsPaused(true); // Pause the slideshow temporarily
     setTimeout(() => setIsPaused(false), 5000); // Resume after 5 seconds
-  };
+  }, [images.length]);
 
   // Handle keyboard navigation
   useEffect(() => {
@@ -97,19 +97,12 @@ const HomePage: React.FC<HomePageProps> = ({
         {!isKeyboardNavigation ? (
           <>
             <button
-              onClick={handlePrev}
-              className="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 focus:outline-none"
-              aria-label="Previous Image"
-            >
-              Previous
-            </button>
-            <button
-              onClick={handleNext}
-              className="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 focus:outline-none"
-              aria-label="Next Image"
-            >
-              Next
-            </button>
+            onClick={navigateToAboutPage}
+            className="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 focus:outline-none"
+            aria-label="Go to About Page"
+          >
+            Go to About Page
+          </button>
           </>
         ) : (
           // Display link to the About page after keyboard navigation
