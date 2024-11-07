@@ -5,19 +5,19 @@ import { motion } from 'framer-motion';
 
 const AboutPage = () => {
   return (
-    <div className="bg-gray-50 py-10">
+    <div className="bg-gray-900 py-10">
       {/* Page Header */}
       <MaxWidthWrapper>
         <div className="text-center">
           <motion.h1
-            className="text-4xl font-bold text-orange-600 mb-4"
+            className="text-4xl font-bold text-orange-400 mb-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}>
             About Gurdwara Siri Guru Singh Sabha Mombasa
           </motion.h1>
           <motion.p
-            className="text-lg text-gray-700 mb-6"
+            className="text-lg text-gray-300 mb-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}>
@@ -36,25 +36,25 @@ const AboutPage = () => {
         >
           <div className="space-y-4">
             <motion.h2
-              className="text-2xl font-semibold text-gray-800"
+              className="text-2xl font-semibold text-gray-300"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}>
               Our Mission
             </motion.h2>
-            <p className="text-gray-700">
+            <p className="text-gray-400">
               Our mission is to serve the community through selfless service (seva), spiritual guidance, and promoting Sikh values of equality, love, and peace.
             </p>
           </div>
           <div className="space-y-4">
             <motion.h2
-              className="text-2xl font-semibold text-gray-800"
+              className="text-2xl font-semibold text-gray-300"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}>
               Our Vision
             </motion.h2>
-            <p className="text-gray-700">
+            <p className="text-gray-400">
               We aim to inspire and unite people of all backgrounds by providing a space for worship, community support, and charitable activities.
             </p>
           </div>
@@ -100,11 +100,11 @@ const AboutPage = () => {
       {/* Contact and Further Information */}
       <MaxWidthWrapper>
         <div className="text-center mb-10">
-          <h3 className="text-xl font-semibold text-gray-800 mb-4">Want to Know More?</h3>
-          <p className="text-gray-700 mb-6">
+          <h3 className="text-xl font-semibold text-gray-300 mb-4">Want to Know More?</h3>
+          <p className="text-gray-400 mb-6">
             We welcome everyone to visit and join our events. Feel free to contact us for more information about services or community programs.
           </p>
-          <Link to="/contact" className="text-orange-600 hover:text-orange-700">
+          <Link to="/contact" className="text-orange-400 hover:text-orange-500">
             Contact Us
           </Link>
         </div>
