@@ -7,7 +7,7 @@ type HomePageProps = {
 };
 
 const HomePage: React.FC<HomePageProps> = ({
-  title = 'Welcome to Gurdwara Siri Guru Singh Sabha Mombasa',
+  title = 'Gurdwara Siri Guru Singh Sabha Mombasa',
   content = 'Discover our community and events.',
 }) => {
   const images = [
@@ -43,7 +43,9 @@ const HomePage: React.FC<HomePageProps> = ({
 
   // Manually go to the previous or next image
   const handlePrev = React.useCallback(() => {
-    setCurrentImage((prevImage) => (prevImage - 1 + images.length) % images.length);
+    setCurrentImage(
+      (prevImage) => (prevImage - 1 + images.length) % images.length
+    );
     setIsPaused(true); // Pause the slideshow temporarily
     setTimeout(() => setIsPaused(false), 5000); // Resume after 5 seconds
   }, [images.length]);
@@ -84,20 +86,23 @@ const HomePage: React.FC<HomePageProps> = ({
 
   return (
     <div
-      className="relative flex flex-col items-center justify-center min-h-screen bg-cover bg-center transition-all duration-700 ease-in-out"
+      className='relative flex flex-col items-center justify-center min-h-screen bg-cover bg-center transition-all duration-700 ease-in-out px-4'
       style={{ backgroundImage: `url(${images[currentImage]})` }}
-      aria-label="Slideshow of the Sikh Temple"
+      aria-label='Slideshow of the Sikh Temple'
     >
-      <div className="bg-black bg-opacity-50 p-8 rounded-lg text-center">
-        <h1 className="text-4xl font-bold text-orange-600 mb-4">{title}</h1>
-        <p className="text-lg text-gray-100 mb-4">{content}</p>
+      <div className='bg-black bg-opacity-50 py-8 rounded-lg text-center sm:p-8'>
+        <span className='text-white font-semibold text-xl'>Welcome to</span>
+        <h1 className='text-3xl font-bold text-orange-600 mb-4 sm:text-4xl'>
+          {title}
+        </h1>
+        <p className='text-lg text-gray-100 mb-4'>{content}</p>
 
         {/* Controls and buttons */}
-        <div className="flex flex-col items-center space-y-4">
+        <div className='flex flex-col items-center space-y-4'>
           <button
             onClick={navigateToAboutPage}
-            className="px-6 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 focus:outline-none"
-            aria-label="Go to About Page"
+            className='px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none'
+            aria-label='Go to About Page'
           >
             Discover
           </button>
@@ -105,12 +110,14 @@ const HomePage: React.FC<HomePageProps> = ({
       </div>
 
       {/* Indicators */}
-      <div className="absolute bottom-4 flex space-x-2">
+      <div className='absolute bottom-4 flex space-x-2'>
         {images.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentImage(index)}
-            className={`h-2 w-2 rounded-full ${currentImage === index ? 'bg-orange-600' : 'bg-gray-300'} focus:outline-none`}
+            className={`h-2 w-2 rounded-full ${
+              currentImage === index ? 'bg-orange-600' : 'bg-gray-300'
+            } focus:outline-none`}
             aria-label={`Slide ${index + 1}`}
           />
         ))}

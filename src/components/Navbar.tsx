@@ -31,7 +31,7 @@ const Navbar = () => {
 
   return (
     <nav className='sticky top-0 z-20 bg-blue-900 shadow-md'>
-      <MaxWidthWrapper className='flex justify-between items-center p-4'>
+      <MaxWidthWrapper className='flex justify-between items-center h-16 sm:h-20'>
         {/* Logo */}
         <Logo />
 
@@ -48,6 +48,7 @@ const Navbar = () => {
                         ? 'active'
                         : 'text-white/70 hover:border-b-2 hover:border-orange-600 hover:py-1'
                     }
+                    onClick={() => setIsMenuOpen(false)}
                   >
                     {menu.label}
                   </NavLink>
@@ -77,7 +78,11 @@ const Navbar = () => {
       </MaxWidthWrapper>
 
       {/* Sidebar */}
-      <Sidebar menulinks={menuLinks} isMenuOpen={isMenuOpen} />
+      <Sidebar
+        menulinks={menuLinks}
+        isMenuOpen={isMenuOpen}
+        setIsMenuOpen={setIsMenuOpen}
+      />
     </nav>
   );
 };
