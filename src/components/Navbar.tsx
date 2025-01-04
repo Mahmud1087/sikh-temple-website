@@ -9,6 +9,7 @@ import { FaTimes } from 'react-icons/fa';
 
 const menuLinks = [
   { to: '/', label: 'Home' },
+  { to: '/events', label: 'Events' },
   { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },
   {
@@ -28,7 +29,7 @@ const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-20 bg-blue-900 shadow-md">
+    <nav className="sticky top-0 z-20 bg-blue-500 shadow-md">
       <MaxWidthWrapper className="flex justify-between items-center h-16 sm:h-20">
         {/* Logo */}
         <Logo />
@@ -46,7 +47,7 @@ const Navbar = () => {
                     onMouseLeave={() => setIsDropdownOpen(false)}
                   >
                     <span
-                      className="text-white/70 hover:border-b-2 hover:border-yellow-600 hover:py-1 cursor-pointer"
+                      className="text-white/70 hover:border-b-2 hover:border-yellow-300 hover:py-1 cursor-pointer"
                     >
                       {menu.label}
                     </span>
@@ -76,7 +77,7 @@ const Navbar = () => {
                     className={({ isActive }) =>
                       isActive
                         ? 'active'
-                        : 'text-white/70 hover:border-b-2 hover:border-yellow-600 hover:py-1'
+                        : 'text-white/70 hover:border-b-2 hover:border-yellow-300 hover:py-1'
                     }
                     onClick={() => setIsMenuOpen(false)}
                   >
@@ -87,7 +88,7 @@ const Navbar = () => {
             })}
           </ul>
           <a
-            className="flex items-center gap-3 ml-4 px-4 py-1 text-white bg-yellow-600 rounded-md hover:bg-yellow-700 focus:outline-none transition-transform transform hover:scale-105"
+            className="flex items-center gap-3 ml-4 px-4 py-1 text-white bg-yellow-300 rounded-md hover:bg-yellow-500 focus:outline-none transition-transform transform hover:scale-105"
             href="https://maps.app.goo.gl/nRY96BKSSgZhzUzV9"
           >
             <span>Visit</span>
