@@ -24,6 +24,14 @@ const menuLinks = [
     to: '/gallery',
     label: 'Gallery',
   },
+  {
+    to: '/Affiliates',
+    label: 'Affiliates',
+  },
+  {
+    to: '/Donate',
+    label: 'Donate',
+  },
 ];
 
 const Navbar = () => {
