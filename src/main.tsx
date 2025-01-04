@@ -13,6 +13,7 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import GalleryPage from './pages/GalleryPage';
+import EventsPage from './pages/EventsPage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
       <Route path='about' element={<AboutPage />} />
       <Route path='contact' element={<ContactPage />} />
       <Route path='gallery' element={<GalleryPage />} />
+      <Route path='events' element={<EventsPage />} />      
     </Route>
   )
 );
