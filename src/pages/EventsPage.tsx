@@ -12,21 +12,21 @@ const EventsPage: React.FC = () => {
     const staticEvents: Event[] = [
         {
             id: 1,
-            title: 'Event One',
-            date: '2025-02-14',
-            description: 'This is the description for Event One.',
+            title: 'Guru Gobind Singh Jayanti',
+            date: '6th January 2025',
+            description: 'Celebrating the birth of Guru Gobind Singh Ji.',
         },
         {
             id: 2,
-            title: 'Event Two',
-            date: '2025-03-01',
-            description: 'Description of the second event.',
+            title: 'Lohri ',
+            date: '13th January 2025',
+            description: 'Celebrating the winter solstice.',
         },
         {
             id: 3,
-            title: 'Event Three',
-            date: '2025-04-10',
-            description: 'A fun event to look forward to!',
+            title: 'Guru Harrai Jayanti ',
+            date: '10th February 2025',
+            description: 'Celebrating the birth of Guru Harrai Ji.',
         },
     ];
 
