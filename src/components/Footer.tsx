@@ -34,6 +34,13 @@ const Footer: React.FC = () => {
             Events
           </a>
           <a
+            href='/gallery'
+            className='text-orange-600 hover:text-orange-400'
+            aria-label='Gallery'
+          >
+            Gallery
+          </a>
+          <a
             href='/contact'
             className='text-orange-600 hover:text-orange-400'
             aria-label='Contact'

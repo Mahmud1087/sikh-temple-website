@@ -21,10 +21,6 @@ const menuLinks = [
     label: 'Contact',
   },
   {
-    to: '/gallery',
-    label: 'Gallery',
-  },
-  {
     to: '/Affiliates',
     label: 'Affiliates',
   },
