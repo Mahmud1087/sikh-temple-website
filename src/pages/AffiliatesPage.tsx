@@ -3,24 +3,11 @@ import { Menu, Dropdown, Button } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
 
 const AffiliatesPage: React.FC = () => {
-    const menu = (
-        <Menu>
-            <Menu.Item key="1">
-                <a href="#medical-fund">Medical Fund</a>
-            </Menu.Item>
-            <Menu.Item key="2">
-                <a href="#education-fund">Education Fund</a>
-            </Menu.Item>
-        </Menu>
-    );
+    
 
     return (
         <div>
-            <Dropdown overlay={menu}>
-                <Button>
-                    Affiliates <DownOutlined />
-                </Button>
-            </Dropdown>
+            <h1>Affiliates</h1>
             <div id="medical-fund" style={{ marginTop: '20px' }}>
                 <h2>Medical Fund</h2>
                 <p>This fund provides very low-cost medical assistance to those in need within the community.</p>

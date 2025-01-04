@@ -21,28 +21,65 @@ const menuLinks = [
     label: 'Contact',
   },
   {
-    to: '/Affiliates',
     label: 'Affiliates',
+    dropdown: [
+      { to: '/affiliates', label: 'Affiliate 1' },
+      { to: '/affiliates', label: 'Affiliate 2' },
+      { to: '/affiliates', label: 'Affiliate 3' },
+    ],
   },
   {
-    to: '/Donate',
+    to: '/donate',
     label: 'Donate',
   },
 ];
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
-    <nav className='sticky top-0 z-20 bg-blue-500 shadow-md'>
-      <MaxWidthWrapper className='flex justify-between items-center h-16 sm:h-20'>
+    <nav className="sticky top-0 z-20 bg-blue-900 shadow-md">
+      <MaxWidthWrapper className="flex justify-between items-center h-16 sm:h-20">
         {/* Logo */}
         <Logo />
 
         {/* Desktop Menu */}
-        <div className='hidden md:flex gap-3'>
-          <ul className='flex gap-5'>
+        <div className="hidden md:flex gap-3">
+          <ul className="flex gap-5 relative">
             {menuLinks.map((menu, i) => {
+              if (menu.dropdown) {
+                return (
+                  <li
+                    key={i}
+                    className="relative group"
+                    onMouseEnter={() => setIsDropdownOpen(true)}
+                    onMouseLeave={() => setIsDropdownOpen(false)}
+                  >
+                    <span
+                      className="text-white/70 hover:border-b-2 hover:border-yellow-600 hover:py-1 cursor-pointer"
+                    >
+                      {menu.label}
+                    </span>
+                    {isDropdownOpen && (
+                      <ul className="absolute left-0 mt-2 bg-white rounded-lg shadow-md overflow-hidden">
+                        {menu.dropdown.map((item, idx) => (
+                          <li key={idx}>
+                            <NavLink
+                              to={item.to}
+                              className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                              onClick={() => setIsMenuOpen(false)}
+                            >
+                              {item.label}
+                            </NavLink>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                );
+              }
+
               return (
                 <li key={i}>
                   <NavLink
@@ -61,8 +98,8 @@ const Navbar = () => {
             })}
           </ul>
           <a
-            className='flex items-center gap-3 ml-4 px-4 py-1 text-white bg-yellow-600 rounded-md hover:bg-yellow-700 focus:outline-none transition-transform transform hover:scale-105'
-            href='https://maps.app.goo.gl/nRY96BKSSgZhzUzV9'
+            className="flex items-center gap-3 ml-4 px-4 py-1 text-white bg-yellow-600 rounded-md hover:bg-yellow-700 focus:outline-none transition-transform transform hover:scale-105"
+            href="https://maps.app.goo.gl/nRY96BKSSgZhzUzV9"
           >
             <span>Visit</span>
             <BsArrowRight />
@@ -70,13 +107,13 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Toggle Button */}
-        <div className='md:hidden flex items-center'>
+        <div className="md:hidden flex items-center">
           <button
-            className='text-white text-2xl focus:outline-none'
+            className="text-white text-2xl focus:outline-none"
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <FaTimes className='text-red-500' /> : <FaBars />}
+            {isMenuOpen ? <FaTimes className="text-red-500" /> : <FaBars />}
           </button>
         </div>
       </MaxWidthWrapper>
