@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
             About Us
           </a>
           <a
-            href='/events'
+            href='/Events'
             className='text-yellow-600 hover:text-yellow-400'
             aria-label='Events'
           >
