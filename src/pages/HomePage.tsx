@@ -7,29 +7,28 @@ type HomePageProps = {
 };
 
 const HomePage: React.FC<HomePageProps> = ({
-  title = 'Welcome to Gurdwara Siri Guru Singh Sabha Mombasa',
+  title = 'Gurdwara Siri Guru Singh Sabha Mombasa',
   content = 'Discover our community and events.',
 }) => {
   const images = [
-    '/src/assets/images/temple/name.jpg',
-    '/src/assets/images/temple/fron.jpg',
-    '/src/assets/images/temple/ga.jpg',
-    '/src/assets/images/temple/inside1.jpg',
-    '/src/assets/images/temple/side1.jpg',
-    '/src/assets/images/temple/up1.jpg',
-    '/src/assets/images/temple/in1.jpg',
-    '/src/assets/images/temple/hallwa.jpg',
-    '/src/assets/images/temple/nigh.jpg',
-    '/src/assets/images/temple/nigh2.jpg',
-    '/src/assets/images/temple/al1.jpg',
-    '/src/assets/images/temple/al2.jpg',
-    '/src/assets/images/temple/al3.jpg',
+    '/images/name.jpg',
+    '/images/fron.jpg',
+    '/images/ga.jpg',
+    '/images/inside1.jpg',
+    '/images/side1.jpg',
+    '/images/up1.jpg',
+    '/images/in1.jpg',
+    '/images/hallwa.jpg',
+    '/images/nigh.jpg',
+    '/images/nigh2.jpg',
+    '/images/al1.jpg',
+    '/images/al2.jpg',
+    '/images/al3.jpg',
   ];
 
   const [currentImage, setCurrentImage] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const navigate = useNavigate(); // To handle navigation
-  const [isKeyboardNavigation, setIsKeyboardNavigation] = useState(false);
 
   // Automatic slideshow with pause on manual control
   useEffect(() => {
@@ -44,7 +43,9 @@ const HomePage: React.FC<HomePageProps> = ({
 
   // Manually go to the previous or next image
   const handlePrev = React.useCallback(() => {
-    setCurrentImage((prevImage) => (prevImage - 1 + images.length) % images.length);
+    setCurrentImage(
+      (prevImage) => (prevImage - 1 + images.length) % images.length
+    );
     setIsPaused(true); // Pause the slideshow temporarily
     setTimeout(() => setIsPaused(false), 5000); // Resume after 5 seconds
   }, [images.length]);
@@ -58,15 +59,17 @@ const HomePage: React.FC<HomePageProps> = ({
   // Handle keyboard navigation
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'ArrowLeft') {
-        handlePrev();
-        setIsKeyboardNavigation(true); // Enable keyboard navigation
-      } else if (event.key === 'ArrowRight') {
-        handleNext();
-        setIsKeyboardNavigation(true); // Enable keyboard navigation
+      switch (event.key) {
+        case 'ArrowLeft':
+          handlePrev();
+          break;
+        case 'ArrowRight':
+          handleNext();
+          break;
+        default:
+          break;
       }
     };
-
     // Add event listener for keydown
     window.addEventListener('keydown', handleKeyDown);
 
@@ -83,46 +86,38 @@ const HomePage: React.FC<HomePageProps> = ({
 
   return (
     <div
-      className="relative flex flex-col items-center justify-center min-h-screen bg-cover bg-center transition-all duration-700 ease-in-out"
+      className='relative flex flex-col items-center justify-center min-h-screen bg-cover bg-center transition-all duration-700 ease-in-out px-4'
       style={{ backgroundImage: `url(${images[currentImage]})` }}
-      aria-label="Slideshow of the Sikh Temple"
+      aria-label='Slideshow of the Sikh Temple'
     >
-      <div className="bg-black bg-opacity-50 p-8 rounded-lg text-center">
-        <h1 className="text-4xl font-bold text-orange-600 mb-4">{title}</h1>
-        <p className="text-lg text-gray-100">{content}</p>
-      </div>
+      <div className='bg-black bg-opacity-50 py-8 rounded-lg text-center sm:p-8'>
+        <span className='text-white font-semibold text-xl'>Welcome to</span>
+        <h1 className='text-3xl font-bold text-orange-600 mb-4 sm:text-4xl'>
+          {title}
+        </h1>
+        <p className='text-lg text-gray-100 mb-4'>{content}</p>
 
-      {/* Controls */}
-      <div className="absolute bottom-8 flex space-x-4">
-        {!isKeyboardNavigation ? (
-          <>
-            <button
-            onClick={navigateToAboutPage}
-            className="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 focus:outline-none"
-            aria-label="Go to About Page"
-          >
-            Go to About Page
-          </button>
-          </>
-        ) : (
-          // Display link to the About page after keyboard navigation
+        {/* Controls and buttons */}
+        <div className='flex flex-col items-center space-y-4'>
           <button
             onClick={navigateToAboutPage}
-            className="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 focus:outline-none"
-            aria-label="Go to About Page"
+            className='px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none'
+            aria-label='Go to About Page'
           >
-            Go to About Page
+            Discover
           </button>
-        )}
+        </div>
       </div>
 
       {/* Indicators */}
-      <div className="absolute bottom-4 flex space-x-2">
+      <div className='absolute bottom-4 flex space-x-2'>
         {images.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentImage(index)}
-            className={`h-2 w-2 rounded-full ${currentImage === index ? 'bg-orange-600' : 'bg-gray-300'} focus:outline-none`}
+            className={`h-2 w-2 rounded-full ${
+              currentImage === index ? 'bg-orange-600' : 'bg-gray-300'
+            } focus:outline-none`}
             aria-label={`Slide ${index + 1}`}
           />
         ))}
