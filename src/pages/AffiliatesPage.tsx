@@ -4,7 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 const affiliatesComponents: Record<string, React.LazyExoticComponent<React.FC>> = {
   'medical-fund': lazy(() => import('../affiliates/MedicalFund')),
   'educational-fund': lazy(() => import('../affiliates/EducationalFund')),
-  'sikh-youth-of-mombasa': lazy(() => import('../affiliates/SikhYouthOfMombasa')),
+  'sikh-youth-of-mombasa': lazy(() => import('../affiliates/SikhYouthofMombasa')),
 };
 
 const AffiliatesPage: React.FC = () => {
