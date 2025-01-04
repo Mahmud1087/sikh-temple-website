@@ -25,7 +25,7 @@ const router = createBrowserRouter(
       <Route path='contact' element={<ContactPage />} />
       <Route path='gallery' element={<GalleryPage />} />
       <Route path='events' element={<EventsPage />} />
-      <Route path='Affiliates' element={<AffiliatesPage />} />
+      <Route path="/affiliates/:affiliateId" element={<AffiliatesPage />} />
       <Route path='Donate' element={<DonationsPage />} />     
     </Route>
   )

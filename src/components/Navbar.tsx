@@ -8,31 +8,20 @@ import Sidebar from './Sidebar';
 import { FaTimes } from 'react-icons/fa';
 
 const menuLinks = [
-  {
-    to: '/',
-    label: 'Home',
-  },
-  {
-    to: '/about',
-    label: 'About',
-  },
-  {
-    to: '/contact',
-    label: 'Contact',
-  },
+  { to: '/', label: 'Home' },
+  { to: '/about', label: 'About' },
+  { to: '/contact', label: 'Contact' },
   {
     label: 'Affiliates',
     dropdown: [
-      { to: '/affiliates', label: 'Affiliate 1' },
-      { to: '/affiliates', label: 'Affiliate 2' },
-      { to: '/affiliates', label: 'Affiliate 3' },
+      { to: '/affiliates/medical-fund', label: 'Medical Fund' },
+      { to: '/affiliates/educational-fund', label: 'Educational Fund' },
+      { to: '/affiliates/sikh-youth-of-mombasa', label: 'Sikh Youth of Mombasa' },
     ],
   },
-  {
-    to: '/donate',
-    label: 'Donate',
-  },
+  { to: '/donate', label: 'Donate' },
 ];
+
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
