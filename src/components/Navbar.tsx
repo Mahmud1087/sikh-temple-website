@@ -40,8 +40,8 @@ const Navbar = () => {
         <Logo />
 
         {/* Desktop Menu */}
-        <div className='hidden md:flex gap-8'>
-          <ul className='flex gap-10'>
+        <div className='hidden md:flex gap-3'>
+          <ul className='flex gap-5'>
             {menuLinks.map((menu, i) => {
               return (
                 <li key={i}>
@@ -50,7 +50,7 @@ const Navbar = () => {
                     className={({ isActive }) =>
                       isActive
                         ? 'active'
-                        : 'text-white/70 hover:border-b-2 hover:border-orange-600 hover:py-1'
+                        : 'text-white/70 hover:border-b-2 hover:border-yellow-600 hover:py-1'
                     }
                     onClick={() => setIsMenuOpen(false)}
                   >
@@ -61,7 +61,7 @@ const Navbar = () => {
             })}
           </ul>
           <a
-            className='flex items-center gap-3 ml-4 px-4 py-1 text-white bg-orange-600 rounded-md hover:bg-orange-700 focus:outline-none transition-transform transform hover:scale-105'
+            className='flex items-center gap-3 ml-4 px-4 py-1 text-white bg-yellow-600 rounded-md hover:bg-yellow-700 focus:outline-none transition-transform transform hover:scale-105'
             href='https://maps.app.goo.gl/nRY96BKSSgZhzUzV9'
           >
             <span>Visit</span>

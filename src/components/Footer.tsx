@@ -21,28 +21,28 @@ const Footer: React.FC = () => {
         <div className='flex flex-col items-center mt-6 md:flex-row space-y-4 md:space-y-0 md:space-x-6 mb-4 md:mb-0 sm:mt-0'>
           <a
             href='/about'
-            className='text-orange-600 hover:text-orange-400'
+            className='text-yellow-600 hover:text-yellow-400'
             aria-label='About Us'
           >
             About Us
           </a>
           <a
             href='/events'
-            className='text-orange-600 hover:text-orange-400'
+            className='text-yellow-600 hover:text-yellow-400'
             aria-label='Events'
           >
             Events
           </a>
           <a
             href='/gallery'
-            className='text-orange-600 hover:text-orange-400'
+            className='text-yellow-600 hover:text-yellow-400'
             aria-label='Gallery'
           >
             Gallery
           </a>
           <a
             href='/contact'
-            className='text-orange-600 hover:text-orange-400'
+            className='text-yellow-600 hover:text-yellow-400'
             aria-label='Contact'
           >
             Contact

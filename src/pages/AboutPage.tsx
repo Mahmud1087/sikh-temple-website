@@ -48,7 +48,7 @@ const AboutPage = () => {
       <MaxWidthWrapper>
         <div className='flex flex-col items-center justify-center mb-10'>
           <motion.h1
-            className='text-3xl font-bold text-orange-400 border-b-2 border-gray-400 w-fit pb-2 mb-6 sm:text-4xl'
+            className='text-3xl font-bold text-yellow-400 border-b-2 border-gray-400 w-fit pb-2 mb-6 sm:text-4xl'
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
@@ -147,7 +147,7 @@ const AboutPage = () => {
             contact us for more information about services or community
             programs.
           </p>
-          <Link to='/contact' className='text-orange-400 hover:text-orange-500'>
+          <Link to='/contact' className='text-yellow-400 hover:text-yellow-500'>
             Contact Us
           </Link>
         </div>
