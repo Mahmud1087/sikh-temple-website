@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 
 interface Event {
     id: number;
@@ -31,7 +31,7 @@ const EventsPage: React.FC = () => {
     ];
 
     // State for events (use the static array here instead of fetching)
-    const [events, setEvents] = useState<Event[]>(staticEvents);
+    const [events,] = useState<Event[]>(staticEvents);
 
     return (
         <div className="bg-gray-50 min-h-screen p-8">
