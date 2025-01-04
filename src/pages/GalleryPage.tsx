@@ -62,7 +62,7 @@ const GalleryPage = () => {
       <MaxWidthWrapper>
         <div className='text-center mb-10 flex flex-col items-center'>
           <motion.h1
-            className='text-3xl font-bold text-orange-400 border-b-2 border-gray-400 w-fit pb-2 mb-6 sm:text-4xl'
+            className='text-3xl font-bold text-yellow-400 border-b-2 border-gray-400 w-fit pb-2 mb-6 sm:text-4xl'
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}

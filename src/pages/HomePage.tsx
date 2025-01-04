@@ -92,7 +92,7 @@ const HomePage: React.FC<HomePageProps> = ({
     >
       <div className='bg-black bg-opacity-50 py-8 rounded-lg text-center sm:p-8'>
         <span className='text-white font-semibold text-xl'>Welcome to</span>
-        <h1 className='text-3xl font-bold text-orange-600 mb-4 sm:text-4xl'>
+        <h1 className='text-3xl font-bold text-yellow-500 mb-4 sm:text-4xl'>
           {title}
         </h1>
         <p className='text-lg text-gray-100 mb-4'>{content}</p>
@@ -116,7 +116,7 @@ const HomePage: React.FC<HomePageProps> = ({
             key={index}
             onClick={() => setCurrentImage(index)}
             className={`h-2 w-2 rounded-full ${
-              currentImage === index ? 'bg-orange-600' : 'bg-gray-300'
+              currentImage === index ? 'bg-yellow-500' : 'bg-gray-300'
             } focus:outline-none`}
             aria-label={`Slide ${index + 1}`}
           />

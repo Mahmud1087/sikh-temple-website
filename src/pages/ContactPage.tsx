@@ -27,7 +27,7 @@ const ContactPage = () => {
     <div className='bg-gray-900 px-3 py-10'>
       <div className='max-w-4xl mx-auto bg-gray-800 p-5 rounded-lg shadow-lg sm:p-8 sm:w-2/5'>
         <header className='flex flex-col items-center'>
-          <h1 className='text-3xl font-bold text-orange-400 border-b-2 border-gray-400 w-fit pb-2 mb-6 sm:text-4xl'>
+          <h1 className='text-3xl font-bold text-yellow-400 border-b-2 border-gray-400 w-fit pb-2 mb-6 sm:text-4xl'>
             Contact Us
           </h1>
 
@@ -52,7 +52,7 @@ const ContactPage = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className='w-full px-4 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 bg-gray-700 text-gray-200'
+              className='w-full px-4 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 bg-gray-700 text-gray-200'
             />
           </div>
 
@@ -70,7 +70,7 @@ const ContactPage = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className='w-full px-4 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 bg-gray-700 text-gray-200'
+              className='w-full px-4 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 bg-gray-700 text-gray-200'
             />
           </div>
 
@@ -88,13 +88,13 @@ const ContactPage = () => {
               onChange={handleChange}
               required
               rows={5}
-              className='w-full px-4 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 bg-gray-700 text-gray-200'
+              className='w-full px-4 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 bg-gray-700 text-gray-200'
             />
           </div>
 
           <button
             type='submit'
-            className='w-full py-3 bg-orange-600 text-white font-bold rounded-lg hover:bg-orange-700 transition duration-200'
+            className='w-full py-3 bg-yellow-600 text-white font-bold rounded-lg hover:bg-yellow-700 transition duration-200'
           >
             Submit
           </button>
@@ -105,7 +105,7 @@ const ContactPage = () => {
           <p className='text-gray-400'>
             <a
               href='https://maps.app.goo.gl/nRY96BKSSgZhzUzV9'
-              className='text-orange-500 hover:text-orange-400'
+              className='text-yellow-500 hover:text-yellow-400'
             >
               WMV8+CQ6, Mwembe Tayari Rd, Mombasa
             </a>
