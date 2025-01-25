@@ -24,6 +24,15 @@ const HomePage: React.FC<HomePageProps> = ({
     '/images/al1.jpg',
     '/images/al2.jpg',
     '/images/al3.jpg',
+    '/images/inside3.jpeg',
+    '/images/inside4.jpeg',
+    '/images/inside5.jpeg',
+    '/images/inside6.jpeg',
+    '/images/inside7.jpeg',
+    '/images/night3.jpeg',
+    '/images/out1.jpeg',
+    '/images/night3.jpeg',
+    '/images/night4.jpeg',
   ];
 
   const [currentImage, setCurrentImage] = useState(0);
