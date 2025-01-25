@@ -17,7 +17,7 @@ const menuLinks = [
     dropdown: [
       { to: '/affiliates/medical-fund', label: 'Medical Fund' },
       { to: '/affiliates/educational-fund', label: 'Educational Fund' },
-      { to: '/affiliates/sikh-youth-of-mombasa', label: 'Sikh Youth of Mombasa' },
+     // { to: '/affiliates/sikh-youth-of-mombasa', label: 'Sikh Youth of Mombasa' },
     ],
   },
   { to: '/donate', label: 'Donate' },
