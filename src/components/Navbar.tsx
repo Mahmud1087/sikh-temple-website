@@ -8,7 +8,7 @@ import Sidebar from './Sidebar';
 import { FaTimes } from 'react-icons/fa';
 
 const menuLinks = [
-  { to: '/', label: 'HomePage' },
+  { to: '/', label: 'Home' },
   { to: '/events', label: 'Events' },
   { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },
@@ -17,10 +17,12 @@ const menuLinks = [
     dropdown: [
       { to: '/affiliates/medical-fund', label: 'Medical Fund' },
       { to: '/affiliates/educational-fund', label: 'Educational Fund' },
+     // { to: '/affiliates/sikh-youth-of-mombasa', label: 'Sikh Youth of Mombasa' },
     ],
   },
   { to: '/donate', label: 'Donate' },
 ];
+
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -36,34 +38,51 @@ const Navbar = () => {
         <div className="hidden md:flex gap-3">
           <ul className="flex gap-5 relative">
             {menuLinks.map((menu, i) => {
-              const isAffiliates = menu.label === 'Affiliates';
+              if (menu.dropdown) {
+                return (
+                  <li
+                    key={i}
+                    className="relative group"
+                    onMouseEnter={() => setIsDropdownOpen(true)}
+                    onMouseLeave={() => setIsDropdownOpen(false)}
+                  >
+                    <span
+                      className="text-white/70 hover:border-b-2 hover:border-yellow-300 hover:py-1 cursor-pointer"
+                    >
+                      {menu.label}
+                    </span>
+                    {isDropdownOpen && (
+                      <ul className="absolute left-0 mt-2 bg-white rounded-lg shadow-md overflow-hidden">
+                        {menu.dropdown.map((item, idx) => (
+                          <li key={idx}>
+                            <NavLink
+                              to={item.to}
+                              className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                              onClick={() => setIsMenuOpen(false)}
+                            >
+                              {item.label}
+                            </NavLink>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                );
+              }
+
               return (
-                <li
-                  key={i}
-                  className="relative group"
-                  onMouseEnter={() => isAffiliates && setIsDropdownOpen(true)}
-                  onMouseLeave={() => isAffiliates && setIsDropdownOpen(false)}
-                >
-                  <span
-                    className={`text-white/70 hover:border-b-2 hover:border-yellow-300 hover:py-1 cursor-pointer`}
+                <li key={i}>
+                  <NavLink
+                    to={menu.to}
+                    className={({ isActive }) =>
+                      isActive
+                        ? 'active'
+                        : 'text-white/70 hover:border-b-2 hover:border-yellow-300 hover:py-1'
+                    }
+                    onClick={() => setIsMenuOpen(false)}
                   >
                     {menu.label}
-                  </span>
-                  {isAffiliates && isDropdownOpen && (
-                    <ul className="absolute left-0 mt-2 bg-white rounded-lg shadow-md overflow-hidden">
-                      {menu.dropdown.map((item, idx) => (
-                        <li key={idx}>
-                          <NavLink
-                            to={item.to}
-                            className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                            onClick={() => setIsMenuOpen(false)}
-                          >
-                            {item.label}
-                          </NavLink>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                  </NavLink>
                 </li>
               );
             })}

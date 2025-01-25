@@ -33,7 +33,7 @@ const AffiliatesPage: React.FC = () => {
         <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-6">
           <AffiliateComponent />
           <Link
-            to="/contacts"
+            to="/"
             className="inline-block mt-6 px-6 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-transform transform hover:scale-105"
           >
             Back to Affiliates
