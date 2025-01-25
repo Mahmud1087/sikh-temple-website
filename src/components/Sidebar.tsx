@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Dispatch, SetStateAction, useState } from "react";
 import { BsArrowRight } from "react-icons/bs";
-import { cn } from "../lib/utils";
 
 type Menulink = {
   to?: string;
