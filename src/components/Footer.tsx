@@ -76,7 +76,7 @@ const Footer: React.FC = () => {
       <div className='text-center text-gray-500 text-sm mt-10 px-9'>
         <hr className='border-t border-gray-600 mb-6' />
         <p>
-          &copy; 2024 Gurdwara Siri Guru Singh Sabha Mombasa. All rights
+          &copy; 2025 Gurdwara Siri Guru Singh Sabha Mombasa. All rights
           reserved.
         </p>
       </div>
