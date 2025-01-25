@@ -1,8 +1,8 @@
-import { NavLink } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
-import { Dispatch, SetStateAction, useState } from 'react';
-import { BsArrowRight } from 'react-icons/bs';
-import { cn } from '../lib/utils';
+import { NavLink } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
+import { Dispatch, SetStateAction, useState } from "react";
+import { BsArrowRight } from "react-icons/bs";
+import { cn } from "../lib/utils";
 
 type Menulink = {
   to?: string;
@@ -23,52 +23,55 @@ const Sidebar = ({ isMenuOpen, menulinks, setIsMenuOpen }: SidebarProps) => {
     setExpandedMenu((prev) => (prev === menuLabel ? null : menuLabel));
   };
 
-  const framerSidebarBackground = {
+  const sidebarBackgroundVariants = {
     initial: { opacity: 0 },
     animate: { opacity: 1 },
     exit: { opacity: 0 },
   };
 
-  const framerSidebarPanel = {
-    initial: { x: '100%', opacity: 0 },
+  const sidebarPanelVariants = {
+    initial: { x: "100%", opacity: 0 },
     animate: { x: 0, opacity: 1 },
-    exit: { x: '100%', opacity: 0 },
-    transition: { type: 'spring', stiffness: 50 },
+    exit: { x: "100%", opacity: 0 },
+    transition: { type: "spring", stiffness: 50 },
   };
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence>
       {isMenuOpen && (
         <motion.div
-          {...framerSidebarBackground}
-          className={cn('w-screen h-screen bg-black/55 fixed z-50 left-0 top-16 sm:hidden')}
+          {...sidebarBackgroundVariants}
+          className="w-screen h-screen bg-black/50 fixed z-50 top-0 left-0"
           onClick={() => setIsMenuOpen(false)}
         >
           <motion.div
-            {...framerSidebarPanel}
-            className="absolute top-0 right-0 w-2/4 p-6 flex flex-col items-center transition-transform transform bg-blue-900 h-full"
+            {...sidebarPanelVariants}
+            className="absolute top-0 right-0 w-2/3 sm:w-1/3 p-6 flex flex-col bg-blue-500 h-full text-white"
           >
-            <ul className="flex flex-col space-y-8 text-center mt-5">
+            <ul className="flex flex-col space-y-6 mt-8">
               {menulinks.map((menu, i) => (
                 <li key={i} className="w-full">
                   {menu.dropdown ? (
                     <div>
                       <button
-                        className="w-full text-white/70 text-left hover:border-b-2 hover:border-yellow-600 hover:py-1"
+                        className="w-full text-left hover:text-yellow-300 font-medium flex justify-between items-center"
                         onClick={() => toggleDropdown(menu.label)}
                       >
                         {menu.label}
+                        <span className="text-yellow-300 text-lg">
+                          {expandedMenu === menu.label ? "-" : "+"}
+                        </span>
                       </button>
                       {expandedMenu === menu.label && (
-                        <ul className="mt-2 space-y-4 pl-4">
+                        <ul className="mt-3 ml-4 space-y-4">
                           {menu.dropdown.map((submenu, j) => (
                             <li key={j}>
                               <NavLink
                                 to={submenu.to}
                                 className={({ isActive }) =>
                                   isActive
-                                    ? 'active'
-                                    : 'text-white/70 hover:border-b-2 hover:border-yellow-600 hover:py-1'
+                                    ? "text-yellow-300 font-semibold"
+                                    : "text-white hover:text-yellow-300"
                                 }
                                 onClick={() => setIsMenuOpen(false)}
                               >
@@ -81,11 +84,11 @@ const Sidebar = ({ isMenuOpen, menulinks, setIsMenuOpen }: SidebarProps) => {
                     </div>
                   ) : (
                     <NavLink
-                      to={menu.to || '#'}
+                      to={menu.to || "#"}
                       className={({ isActive }) =>
                         isActive
-                          ? 'active'
-                          : 'text-white/70 hover:border-b-2 hover:border-yellow-600 hover:py-1'
+                          ? "text-yellow-300 font-semibold"
+                          : "text-white hover:text-yellow-300"
                       }
                       onClick={() => setIsMenuOpen(false)}
                     >
@@ -97,7 +100,7 @@ const Sidebar = ({ isMenuOpen, menulinks, setIsMenuOpen }: SidebarProps) => {
             </ul>
 
             <a
-              className="flex items-center gap-3 mt-10 ml-4 px-4 py-1 text-white bg-yellow-600 rounded-md hover:bg-yellow-700 focus:outline-none transition-transform transform hover:scale-105"
+              className="flex items-center justify-center gap-3 mt-10 px-4 py-2 bg-yellow-300 text-blue-600 font-medium rounded-md hover:bg-yellow-400 transition-transform transform hover:scale-105"
               href="https://maps.app.goo.gl/nRY96BKSSgZhzUzV9"
               onClick={() => setIsMenuOpen(false)}
             >

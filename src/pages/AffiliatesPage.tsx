@@ -18,10 +18,10 @@ const AffiliatesPage: React.FC = () => {
         <h1 className="text-2xl font-bold text-red-500">Affiliate Not Found</h1>
         <p>The affiliate you are looking for does not exist.</p>
         <Link
-          to="/affiliates"
+          to="/contact"
           className="px-6 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-transform transform hover:scale-105"
         >
-          Back to Affiliates
+          Contact US
         </Link>
       </div>
     );
@@ -33,7 +33,7 @@ const AffiliatesPage: React.FC = () => {
         <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-6">
           <AffiliateComponent />
           <Link
-            to="/contacts"
+            to="/"
             className="inline-block mt-6 px-6 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-transform transform hover:scale-105"
           >
             Back to Affiliates
