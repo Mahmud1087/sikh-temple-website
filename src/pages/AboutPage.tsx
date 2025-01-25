@@ -36,7 +36,6 @@ const AboutPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Preload first image (you can extend to preload all images)
     const img = new Image();
     img.src = images[0].src;
     img.onload = () => setLoading(false);
@@ -67,6 +66,23 @@ const AboutPage = () => {
         </div>
       </MaxWidthWrapper>
 
+      {/* History Section */}
+      <MaxWidthWrapper>
+        <motion.div
+          className='space-y-4 mb-10'
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <motion.h2 className='text-2xl font-semibold text-gray-300'>
+            Our History
+          </motion.h2>
+          <p className='text-gray-400 sm:w-3/4'>
+            Established in the early 20th century, our Gurdwara has been a cornerstone of the Sikh community in Mombasa, providing a space for worship, community service, and cultural preservation.
+          </p>
+        </motion.div>
+      </MaxWidthWrapper>
+
       {/* Mission and Vision */}
       <MaxWidthWrapper>
         <motion.div
@@ -76,38 +92,93 @@ const AboutPage = () => {
           transition={{ duration: 1 }}
         >
           <div className='space-y-4'>
-            <motion.h2
-              className='text-2xl font-semibold text-gray-300'
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-            >
+            <motion.h2 className='text-2xl font-semibold text-gray-300'>
               Our Mission
             </motion.h2>
             <p className='text-gray-400 sm:w-3/4'>
-              Our mission is to serve the community through selfless service
-              (seva), spiritual guidance, and promoting Sikh values of equality,
-              love, and peace.
+              Our mission is to serve the community through selfless service (seva), spiritual guidance, and promoting Sikh values of equality, love, and peace.
             </p>
           </div>
           <div className='space-y-4'>
-            <motion.h2
-              className='text-2xl font-semibold text-gray-300'
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-            >
+            <motion.h2 className='text-2xl font-semibold text-gray-300'>
               Our Vision
             </motion.h2>
             <p className='text-gray-400 sm:w-3/4'>
-              We aim to inspire and unite people of all backgrounds by providing
-              a space for worship, community support, and charitable activities.
+              We aim to inspire and unite people of all backgrounds by providing a space for worship, community support, and charitable activities.
             </p>
           </div>
         </motion.div>
       </MaxWidthWrapper>
 
-      {/* Image Gallery or Map Section with hover effects */}
+      {/* Community Engagement Section */}
+      <MaxWidthWrapper>
+        <motion.div
+          className='space-y-4 mb-10'
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <motion.h2 className='text-2xl font-semibold text-gray-300'>
+            Community Engagement
+          </motion.h2>
+          <p className='text-gray-400 sm:w-3/4'>
+            We actively engage in various community service projects, including food drives, educational programs, and cultural events. Join us in making a difference!
+          </p>
+        </motion.div>
+      </MaxWidthWrapper>
+
+      {/* Visitor Information Section */}
+      <MaxWidthWrapper>
+        <motion.div
+          className='space-y-4 mb-10'
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <motion.h2 className='text-2xl font-semibold text-gray-300'>
+            Visitor Information
+          </motion.h2>
+          <p className='text-gray-400 sm:w-3/4'>
+            We welcome visitors of all backgrounds. Our temple is open daily from [insert days and hours]. Please dress modestly and feel free to join us for Langar (community meal) after services.
+          </p>
+        </motion.div>
+      </MaxWidthWrapper>
+
+      {/* Testimonials Section */}
+      <MaxWidthWrapper>
+        <motion.div
+          className='space-y-4 mb-10'
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <motion.h2 className='text-2xl font-semibold text-gray-300'>
+            Community Voices
+          </motion.h2>
+          <p className='text-gray-400 sm:w-3/4'>
+            "The Gurdwara has been a second home for me and my family. The sense of community and support is unparalleled." - [Name]
+          </p>
+        </motion.div>
+      </MaxWidthWrapper>
+
+      {/* Future Plans Section */}
+      <MaxWidthWrapper>
+        <motion.div
+          className='space-y-4 mb-10'
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <motion.h2 className='text-2xl font-semibold text-gray-300'>
+            Future Plans
+          </motion.h2>
+          <p className='text-gray-400 sm:w-3/4'>
+            We are excited to announce plans for [insert upcoming projects or events], aimed at further enriching our community and outreach efforts.
+          </p>
+        </motion.div>
+      </MaxWidthWrapper>
+
+      {/* Image Gallery */}
       <MaxWidthWrapper>
         {loading ? (
           <div className='loader text-center text-white'>Loading...</div>
@@ -119,13 +190,13 @@ const AboutPage = () => {
                 className='group relative'
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
-                tabIndex={0} // Allow keyboard navigation
+                tabIndex={0}
               >
                 <img
                   src={image.src}
                   alt={image.alt}
                   className='w-full h-60 object-cover rounded-lg shadow-lg transition-transform duration-300'
-                  loading='lazy' // Lazy loading for performance
+                  loading='lazy'
                 />
                 <p className='caption absolute bottom-2 left-2 text-white bg-black bg-opacity-50 p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
                   {image.description}
@@ -143,9 +214,7 @@ const AboutPage = () => {
             Want to Know More?
           </h3>
           <p className='text-gray-400 mb-6'>
-            We welcome everyone to visit and join our events. Feel free to
-            contact us for more information about services or community
-            programs.
+            We welcome everyone to visit and join our events. Feel free to contact us for more information about services or community programs.
           </p>
           <Link to='/contact' className='text-yellow-400 hover:text-yellow-500'>
             Contact Us
