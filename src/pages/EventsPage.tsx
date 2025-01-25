@@ -37,27 +37,9 @@ const EventsPage: React.FC = () => {
     },
   ];
 
-  const [events, setEvents] = useState<Event[]>(staticEvents);
+  const [events] = useState<Event[]>(staticEvents);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [filterDate, setFilterDate] = useState<string>("");
-  const [newEvent, setNewEvent] = useState<Event>({
-    id: 0,
-    title: "",
-    date: "",
-    description: "",
-    imageUrl: "",
-  });
-
-  // Add a new event
-  const handleAddEvent = () => {
-    if (newEvent.title && newEvent.date && newEvent.description) {
-      setEvents((prevEvents) => [
-        ...prevEvents,
-        { ...newEvent, id: prevEvents.length + 1 },
-      ]);
-      setNewEvent({ id: 0, title: "", date: "", description: "", imageUrl: "" });
-    }
-  };
 
   // Filter and search events
   const filteredEvents = events.filter((event) => {
@@ -136,6 +118,7 @@ const EventsPage: React.FC = () => {
         )}
 
         {/* Add Event Form */}
+        {/* 
         <div className="mt-8 p-4 bg-gray-100 rounded-lg shadow-inner">
           <h2 className="text-2xl font-semibold text-blue-600 mb-4">
             Add a New Event
@@ -163,7 +146,10 @@ const EventsPage: React.FC = () => {
               placeholder="Event Description"
               value={newEvent.description}
               onChange={(e) =>
-                setNewEvent((prev) => ({ ...prev, description: e.target.value }))
+                setNewEvent((prev) => ({
+                  ...prev,
+                  description: e.target.value,
+                }))
               }
               className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 col-span-2"
             />
@@ -184,6 +170,7 @@ const EventsPage: React.FC = () => {
             Add Event
           </button>
         </div>
+        */}
       </div>
     </div>
   );
