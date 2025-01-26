@@ -3,8 +3,8 @@ import React, { useState } from "react";
 const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
     message: "",
+    subject: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
