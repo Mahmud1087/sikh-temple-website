@@ -110,12 +110,13 @@ const ContactPage = () => {
               WMV8+CQ6, Mwembe Tayari Rd, Mombasa
             </a>
           </p>
-          <h3 className='text-xl font-semibold text-gray-300 mt-4'>
+         {/*  <h3 className='text-xl font-semibold text-gray-300 mt-4'>
             Phone Number
           </h3>
-          <p className='text-gray-400'>0123456789</p>
+         <p className='text-gray-400'>0123456789</p>*/}
           <h3 className='text-xl font-semibold text-gray-300 mt-4'>Email</h3>
-          <p className='text-gray-400'>info@gurdwarasiri.org</p>
+          <p className='text-lg'><a href="mailto: sgssgurudwaramsa@gmail.com"> <u>sgssgurudwaramsa@gmail.com</u> </a></p>
+
         </div>
       </div>
     </div>
