@@ -84,12 +84,13 @@ const DonationsPage: React.FC = () => {
             transition={{ duration: 1 }}
           >
             {[
-              { label: "Bank Name", value: "Example Bank" },
-              { label: "Account Name", value: "Sikh Temple Donations" },
-              { label: "Account Number", value: "12345678" },
-              { label: "Sort Code", value: "12-34-56" },
-              { label: "IBAN", value: "GB12EXAMPLE1234567890" },
-              { label: "BIC", value: "EXAMPGB2L" },
+               { label: "Bank Name", value: "BANK OF BARODA (K) LTD" },
+               { label: "Account Name", value: "S.G.S.S. MAIN A/C" },
+               { label: "Account Number", value: "95820100001825" },
+               { label: "Bank Code", value: "06" },
+               { label: "Branch Code", value: "002" },
+               { label: "SwiftCode", value: "BARBKENAMOM" },
+               { label: "Branch Name", value: "DIGO ROAD KIZINGO" },
             ].map((detail, index) => (
               <motion.li
                 key={index}
