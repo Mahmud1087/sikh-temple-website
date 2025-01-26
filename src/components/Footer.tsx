@@ -13,8 +13,8 @@ const Footer: React.FC = () => {
             alt='Gurdwara Siri Guru Singh Sabha Mombasa Logo'
             className='h-12 mb-4 mx-auto md:mx-0'
           />
-          <p className='text-lg'>Contact Us: info@sikhtemplemombasa.org</p>
-          <p className='text-lg'>Phone: 0123456789</p>
+              <p className='text-lg'><a href="mailto: sgssgurudwaramsa@gmail.com"> <u>email us</u> </a></p>
+              {/* <p className='text-lg'>Phone: 0123456789</p>*/}
         </div>
 
         {/* Quick Links */}

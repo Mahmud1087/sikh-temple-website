@@ -46,6 +46,8 @@ const DonationsPage: React.FC = () => {
               "Include your name as a reference when making a donation.",
               "Contact us for a receipt with your donation details.",
               "Reach out to our support team for any questions.",
+              <p className='text-lg'><a href="mailto: sgssgurudwaramsa@gmail.com"> <u>email us</u> </a></p>
+
             ].map((note, index) => (
               <motion.li
                 key={index}
