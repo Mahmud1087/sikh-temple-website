@@ -23,14 +23,14 @@ const ContactPage = () => {
   
     const mailtoLink = `mailto:sgssgurudwaramsa@gmail.com?subject=Contact%20Form%20Submission&body=Name:%20${encodeURIComponent(
       formData.name
-    )}%0AEmail:%20${encodeURIComponent(formData.email)}%0A%0AMessage:%20${encodeURIComponent(
+    )}%0AEmail:%20${encodeURIComponent(formData.subject)}%0A%0AMessage:%20${encodeURIComponent(
       formData.message
     )}`;
   
     window.location.href = mailtoLink;
     // Reset form after submission
     setTimeout(() => {
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ name: "", subject: "", message: "" });
       setIsSubmitted(false);
     }, 3000);
   };
