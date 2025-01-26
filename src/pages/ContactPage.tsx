@@ -21,7 +21,7 @@ const ContactPage = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   
-    const mailtoLink = `mailto:sgssgurudwaramsa@gmail.com?subject=Contact%20Form%20Submission&body=Name:%20${encodeURIComponent(
+    const mailtoLink = `mailto:netsaj4@gmail.com?subject=Contact%20Form%20Submission&body=Name:%20${encodeURIComponent(
       formData.name
     )}%0AEmail:%20${encodeURIComponent(formData.subject)}%0A%0AMessage:%20${encodeURIComponent(
       formData.message
