@@ -21,7 +21,7 @@ const ContactPage = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   
-    const mailtoLink = `mailto:netsaj4@gmail.com?subject=Contact%20Form%20Submission&body=Name:%20${encodeURIComponent(
+    const mailtoLink = `mailto:sgssgurudwaramsa@gmail.com?subject=Contact%20Form%20Submission&body=Name:%20${encodeURIComponent(
       formData.name
     )}%0AEmail:%20${encodeURIComponent(formData.email)}%0A%0AMessage:%20${encodeURIComponent(
       formData.message
@@ -70,16 +70,16 @@ const ContactPage = () => {
 
           <div>
             <label
-              htmlFor="email"
+              htmlFor="Subject"
               className="block text-gray-300 font-semibold mb-2"
             >
-              Email
+              subject
             </label>
             <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
+              type="string"
+              id="subject"
+              name="subject"
+              value={formData.subject}
               onChange={handleChange}
               required
               className="w-full px-4 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 bg-gray-700 text-gray-200"
