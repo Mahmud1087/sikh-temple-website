@@ -26,8 +26,10 @@ const DonationsPage: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            Your generous contributions make a real difference. Every donation helps us to maintain and improve our services. Thank you for your support!
+            Your generous contributions make a real difference. Every donation helps us to maintain and improve our services. 
+            Thank you for your support!
           </motion.p>
+
           <motion.h2
             className="text-xl font-semibold text-blue-500 mb-3"
             initial={{ opacity: 0 }}
@@ -46,8 +48,11 @@ const DonationsPage: React.FC = () => {
               "Include your name as a reference when making a donation.",
               "Contact us for a receipt with your donation details.",
               "Reach out to our support team for any questions.",
-              <p className='text-lg'><a href="mailto: sgssgurudwaramsa@gmail.com"> <u>email us</u> </a></p>
-
+              <p className="text-lg">
+                <a href="mailto: sgssgurudwaramsa@gmail.com" className="text-blue-600 underline">
+                  Email Us
+                </a>
+              </p>,
             ].map((note, index) => (
               <motion.li
                 key={index}
@@ -59,12 +64,35 @@ const DonationsPage: React.FC = () => {
               </motion.li>
             ))}
           </motion.ul>
+
+          {/* M-Pesa Section */}
+          <motion.div
+            className="mt-1 p-5 bg-green-200 rounded-lg shadow-md border-l-4 border-green-600"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <h2 className="text-lg font-semibold text-green-700">M-Pesa Donations</h2>
+            <p className="text-gray-800 mt-2">
+              Use the following M-Pesa PayBill details for easy mobile donations:
+            </p>
+            <ul className="mt-3 space-y-2">
+              <li>
+                <span className="font-semibold text-green-700">PayBill No:</span>{" "}
+                <span className="font-bold">4027863</span>
+              </li>
+              <li>
+                <span className="font-semibold text-green-700">Account:</span>{" "}
+                <span className="font-bold">Your Name or Purpose</span>
+              </li>
+            </ul>
+          </motion.div>
         </div>
 
         {/* Right Section */}
         <div>
           <motion.h2
-            className="text-xl font-semibold text-blue-500 mb-4"
+            className="text-xl font-semibold text-blue-500 mb-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
@@ -86,13 +114,13 @@ const DonationsPage: React.FC = () => {
             transition={{ duration: 1 }}
           >
             {[
-               { label: "Bank Name", value: "BANK OF BARODA (K) LTD" },
-               { label: "Account Name", value: "S.G.S.S. MAIN A/C" },
-               { label: "Account Number", value: "95820100001825" },
-               { label: "Bank Code", value: "06" },
-               { label: "Branch Code", value: "002" },
-               { label: "SwiftCode", value: "BARBKENAMOM" },
-               { label: "Branch Name", value: "DIGO ROAD KIZINGO" },
+              { label: "Bank Name", value: "BANK OF BARODA (K) LTD" },
+              { label: "Account Name", value: "S.G.S.S. MAIN A/C" },
+              { label: "Account Number", value: "95820100001825" },
+              { label: "Bank Code", value: "06" },
+              { label: "Branch Code", value: "002" },
+              { label: "Swift Code", value: "BARBKENAMOM" },
+              { label: "Branch Name", value: "DIGO ROAD KIZINGO" },
             ].map((detail, index) => (
               <motion.li
                 key={index}
@@ -101,13 +129,12 @@ const DonationsPage: React.FC = () => {
                 animate={{ scale: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <span className="font-semibold text-blue-600">
-                  {detail.label}:
-                </span>{" "}
-                {detail.value}
+                <span className="font-semibold text-blue-600">{detail.label}:</span> {detail.value}
               </motion.li>
             ))}
           </motion.ul>
+
+          
         </div>
       </motion.div>
     </div>

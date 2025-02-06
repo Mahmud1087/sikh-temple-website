@@ -23,20 +23,20 @@ const SikhYouthOfMombasa: React.FC = () => {
 
       {/* Who We Are */}
       <motion.section className="mb-10" variants={sectionVariants} initial="hidden" animate="visible">
-  <h2 className="text-2xl font-semibold text-gray-800 mb-4">Who We Are</h2>
-  <div className="flex flex-col md:flex-row items-center gap-6">
-    <img
-      src="/images/styouthlogo.jpg"
-      alt="Sikh Youth Group"
-      className="w-40 h-40 md:w-60 md:h-60 object-cover rounded-full shadow-md border-4 border-gray-300"
-    />
-    <p className="text-lg text-gray-700 text-center md:text-left">
-      Sikh Youth of Mombasa is a community-driven group dedicated to uniting the Sikh youth. Founded in July 2016,
-      our mission is to create a strong, connected, and active youth community that upholds Sikh values while making
-      a positive impact in society.
-    </p>
-  </div>
-</motion.section>
+        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Who We Are</h2>
+        <div className="flex flex-col md:flex-row items-center gap-6">
+          <img
+            src="/images/styouthlogo.jpg"
+            alt="Sikh Youth Group"
+            className="w-40 h-40 md:w-60 md:h-60 object-cover rounded-full shadow-md border-4 border-gray-300"
+          />
+          <p className="text-lg text-gray-700 text-center md:text-left">
+            Sikh Youth of Mombasa is a community-driven group dedicated to uniting the Sikh youth. Founded in July 2016,
+            our mission is to create a strong, connected, and active youth community that upholds Sikh values while making
+            a positive impact in society.
+          </p>
+        </div>
+      </motion.section>
 
 
       {/* Our Vision */}
