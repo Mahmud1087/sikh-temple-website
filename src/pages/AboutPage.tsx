@@ -167,35 +167,7 @@ const AboutPage = () => {
         </motion.div>
       </MaxWidthWrapper>
 
-      {/* Image Gallery */}
-      <MaxWidthWrapper>
-        {loading ? (
-          <div className="loader text-center text-white">Loading...</div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-            {images.map((image, index) => (
-              <motion.div
-                key={index}
-                className="group relative"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-                tabIndex={0}
-              >
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-60 object-cover rounded-lg shadow-lg transition-transform duration-300"
-                  loading="lazy"
-                />
-                <p className="caption absolute bottom-2 left-2 text-white bg-black bg-opacity-50 p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  {image.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        )}
-      </MaxWidthWrapper>
-
+      
       {/* Contact and Further Information */}
       <MaxWidthWrapper>
         <div className="text-center mb-10">
