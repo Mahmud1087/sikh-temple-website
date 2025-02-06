@@ -26,11 +26,11 @@ const SikhYouthOfMombasa: React.FC = () => {
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">Who We Are</h2>
         <div className="flex flex-col md:flex-row gap-6">
           <img
-            src="/images/stsong youth.jpeg"
+            src="/images/styouthlogo.jpg"
             alt="Sikh Youth Group"
             className="w-full md:w-1/2 h-60 object-cover rounded-lg shadow-md"
           />
-          <p className="text-lg text-gray-700">
+          <p className="text text-gray-700">
             Sikh Youth of Mombasa is a community-driven group dedicated to uniting the Sikh youth. Founded in July 2016,
             our mission is to create a strong, connected, and active youth community that upholds Sikh values while making
             a positive impact in society.
