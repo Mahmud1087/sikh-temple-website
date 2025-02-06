@@ -4,29 +4,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const AboutPage = () => {
-  const images = [
-    {
-      src: "/images/name.jpg",
-      alt: "Temple name",
-      description: "Sign with temple name",
-    },
-    {
-      src: "/images/fron.jpg",
-      alt: "Front view of temple",
-      description: "The front view of the temple",
-    },
-    {
-      src: "/images/side1.jpg",
-      alt: "Side view of temple",
-      description:
-        "Simran Darbar & Main Darbar (Outside) Langar Hall and Kitchen on Ground Floor",
-    },
-    {
-      src: "/images/up1.jpg",
-      alt: "Top view",
-      description: "A top view of the temple grounds",
-    },
-  ];
+  
 
   const testimonials = [
     {
@@ -43,15 +21,12 @@ const AboutPage = () => {
     },
   ];
 
-  const [loading, setLoading] = useState(true);
+  //const [setLoading] = useState(true);
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
 
   useEffect(() => {
-    const img = new Image();
-    img.src = images[0].src;
-    img.onload = () => setLoading(false);
-
+    
     const testimonialInterval = setInterval(() => {
       setTestimonialIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
     }, 5000); // Rotate testimonials every 5 seconds
