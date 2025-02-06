@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
           </a>
         </div>
 
-        {/* Social Media Links */}
+        {/* Social Media Links 
         <div className='flex items-center space-x-6 mb-4 mt-10 sm:mt-0 md:mb-0'>
           <a
             href='https://www.facebook.com/msasikhs/'
@@ -69,8 +69,9 @@ const Footer: React.FC = () => {
           >
             <BsTwitterX />
           </a>
-        </div>
+        </div>*/}
       </div>
+      
 
       {/* Copyright */}
       <div className='text-center text-gray-500 text-sm mt-10 px-9'>
