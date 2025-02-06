@@ -98,7 +98,7 @@ const EducationFund: React.FC = () => {
         </div>
       </div>
 
-      {/* Gallery Section */}
+      {/* Gallery Section 
       <div className="mt-12">
         <h2 className="text-2xl font-semibold text-blue-600 text-center mb-4">Gallery</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -112,7 +112,7 @@ const EducationFund: React.FC = () => {
             Image Placeholder
           </div>
         </div>
-      </div>
+      </div>*/}
     </div>
   );
 };
