@@ -45,7 +45,7 @@ const Sidebar = ({ isMenuOpen, menulinks, setIsMenuOpen }: SidebarProps) => {
         >
           <motion.div
             {...sidebarPanelVariants}
-            className="absolute top-0 right-0 w-2/3 sm:w-1/3 p-6 flex flex-col bg-blue-500 h-full text-white"
+            className="absolute top-0 right-0 w-2/3 sm:w-1/3 p-6 flex flex-col bg-blue-900 h-full text-white"
           >
             <ul className="flex flex-col space-y-6 mt-8">
               {menulinks.map((menu, i) => (

@@ -29,7 +29,7 @@ const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-20 bg-blue-500 shadow-md">
+    <nav className="sticky top-0 z-20 bg-blue-900 shadow-md">
       <MaxWidthWrapper className="flex justify-between items-center h-16 sm:h-20">
         {/* Logo */}
         <Logo />
