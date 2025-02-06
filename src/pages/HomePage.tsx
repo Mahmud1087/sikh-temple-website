@@ -45,7 +45,7 @@ const HomePage: React.FC<HomePageProps> = ({
 
     const interval = setInterval(() => {
       setCurrentImage((prevImage) => (prevImage + 1) % images.length);
-    }, 3000); // Change image every 3 seconds
+    }, 9000); // Change image every 5 seconds
 
     return () => clearInterval(interval); // Clean up interval on component unmount
   }, [images.length, isPaused]);
