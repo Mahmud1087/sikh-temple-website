@@ -16,7 +16,7 @@ const menuLinks = [
     label: 'Affiliates',
     dropdown: [
       { to: '/affiliates/medical-fund', label: 'Medical Fund' },
-      { to: '/affiliates/educational-fund', label: 'Educational Fund' },
+      { to: '/affiliates/education-fund', label: 'Education Fund' },
       { to: '/affiliates/sikh-youth-of-mombasa', label: 'Sikh Youth of Mombasa' },
     ],
   },
@@ -52,12 +52,12 @@ const Navbar = () => {
                       {menu.label}
                     </span>
                     {isDropdownOpen && (
-                      <ul className="absolute left-0 mt-2 bg-white rounded-lg shadow-md overflow-hidden">
+                      <ul className="absolute left-0 mt-2 bg-slate-700 rounded-lg shadow-md overflow-hidden">
                         {menu.dropdown.map((item, idx) => (
                           <li key={idx}>
                             <NavLink
                               to={item.to}
-                              className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                              className="block px-4 py-2 text hover:bg-yellow-500"
                               onClick={() => setIsMenuOpen(false)}
                             >
                               {item.label}

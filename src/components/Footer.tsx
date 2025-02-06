@@ -1,5 +1,5 @@
-import { BsTwitterX } from 'react-icons/bs';
-import { FaFacebook } from 'react-icons/fa6';
+//import { BsTwitterX } from 'react-icons/bs';
+//import { FaFacebook } from 'react-icons/fa6';
 
 const Footer: React.FC = () => {
   return (
