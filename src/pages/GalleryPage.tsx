@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import MaxWidthWrapper from '../components/MaxWidthWrapper';
-import { motion } from 'framer-motion';
+import { useState, useEffect } from "react";
+import MaxWidthWrapper from "../components/MaxWidthWrapper";
+import { motion } from "framer-motion";
 
 const GalleryPage = () => {
   const images = [
@@ -74,43 +74,40 @@ const GalleryPage = () => {
       alt: 'Side angle of the temple',
       description: 'A distinct side view of the temple’s design.',
     },
-    {
-      src: '/images/up1.jpg',
-      alt: 'Aerial view of the temple',
-      description: 'A high-angle view capturing the temple’s layout.',
-    },
+    
   ];
   
 
   const [loading, setLoading] = useState(true);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
-    // Simulate image loading
+    // Simulate image preloading
     const img = new Image();
-    img.src = images[0].src; // Preload the first image (or all if needed)
+    img.src = images[0].src;
     img.onload = () => setLoading(false);
-  });
+  }, []);
 
   return (
-    <div className='bg-gray-900 py-10'>
+    <div className="bg-gray-900 py-10 min-h-screen">
+      {/* Header */}
       <MaxWidthWrapper>
-        <div className='text-center mb-10 flex flex-col items-center'>
+        <div className="text-center mb-10 flex flex-col items-center">
           <motion.h1
-            className='text-3xl font-bold text-yellow-400 border-b-2 border-gray-400 w-fit pb-2 mb-6 sm:text-4xl'
+            className="text-4xl font-bold text-yellow-400 border-b-2 border-gray-400 w-fit pb-2 mb-6 sm:text-5xl"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
-            Gallery
+            📸 Gallery
           </motion.h1>
           <motion.p
-            className='text-lg text-gray-300 mb-6'
+            className="text-lg sm:text-xl text-gray-300 mb-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            Explore the beautiful moments captured at Gurdwara Siri Guru Singh
-            Sabha Mombasa.
+            Explore the beautiful moments captured at Gurdwara Siri Guru Singh Sabha Mombasa.
           </motion.p>
         </div>
       </MaxWidthWrapper>
@@ -118,24 +115,24 @@ const GalleryPage = () => {
       {/* Image Gallery */}
       <MaxWidthWrapper>
         {loading ? (
-          <div className='loader text-center text-white'>Loading...</div>
+          <div className="text-center text-white">Loading images...</div>
         ) : (
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
             {images.map((image, index) => (
               <motion.div
                 key={index}
-                className='group relative'
+                className="group relative cursor-pointer"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
-                tabIndex={0} // Allow keyboard navigation
+                onClick={() => setSelectedImage(image.src)}
               >
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className='w-full h-60 object-cover rounded-lg shadow-lg transition-transform duration-300'
-                  loading='lazy' // Lazy loading for improved performance
+                  className="w-full h-60 object-cover rounded-lg shadow-lg transition-transform duration-300"
+                  loading="lazy"
                 />
-                <p className='caption absolute bottom-2 left-2 text-white bg-black bg-opacity-50 p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                <p className="absolute bottom-2 left-2 text-white bg-black bg-opacity-50 p-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   {image.description}
                 </p>
               </motion.div>
@@ -143,6 +140,25 @@ const GalleryPage = () => {
           </div>
         )}
       </MaxWidthWrapper>
+
+      {/* Lightbox (Modal) for Fullscreen Image View */}
+      {selectedImage && (
+        <motion.div
+          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setSelectedImage(null)}
+        >
+          <motion.img
+            src={selectedImage}
+            className="max-w-[90%] max-h-[90%] rounded-lg shadow-lg"
+            initial={{ scale: 0.8 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0.8 }}
+          />
+        </motion.div>
+      )}
     </div>
   );
 };
