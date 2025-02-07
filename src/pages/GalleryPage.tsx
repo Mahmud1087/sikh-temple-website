@@ -5,48 +5,82 @@ import { motion } from 'framer-motion';
 const GalleryPage = () => {
   const images = [
     {
-      src: '/images/inside1.jpg',
-      alt: 'Inside of the temple',
-      description: 'Darbar Sahib & Manji Sahib',
+      src: '/images/newgateview.jpeg',
+      alt: 'Temple entrance gate',
+      description: 'A welcoming view of the main entrance gate.',
     },
     {
-      src: '/images/ga.jpg',
-      alt: 'Temple grounds',
-      description: 'The serene temple grounds',
+      src: '/images/newaltarcloseup.jpeg',
+      alt: 'Close-up of the altar',
+      description: 'A detailed close-up of the altar inside the temple.',
     },
     {
-      src: '/images/nigh.jpg',
+      src: '/images/newGurukalangar.jpeg',
+      alt: 'Guru Ka Langar',
+      description: 'The community kitchen serving meals to all visitors.',
+    },
+    {
+      src: '/images/newdashmeshdabar.jpeg',
+      alt: 'Dashmesh Darbar',
+      description: 'A sacred space within the temple for spiritual gatherings.',
+    },
+    {
+      src: '/images/newaltarfrontview.jpeg',
+      alt: 'Front view of the altar',
+      description: 'A serene front view of the beautifully decorated altar.',
+    },
+    {
+      src: '/images/newtemplealtar.jpeg',
+      alt: 'Temple Altar',
+      description: 'A magnificent view of the temple’s main altar.',
+    },
+    {
+      src: '/images/newtempleflag.jpeg',
+      alt: 'Temple Flag',
+      description: 'The Nishan Sahib, proudly hoisted at the temple.',
+    },
+    {
+      src: '/images/newtemplegatehead.jpeg',
+      alt: 'Temple Gate Head',
+      description: 'The main gate’s decorative headpiece with Sikh symbols.',
+    },
+    {
+      src: '/images/newtemplehallway.jpeg',
+      alt: 'Temple hallway',
+      description: 'A view of the temple’s peaceful hallway.',
+    },
+    {
+      src: '/images/newtemplenightview.jpeg',
       alt: 'Temple at night',
-      description: 'Temple illuminated at night',
+      description: 'A breathtaking view of the temple illuminated at night.',
     },
     {
-      src: '/images/name.jpg',
-      alt: 'Temple name',
-      description: 'Sign with temple name',
+      src: '/images/newtempleparking.jpeg',
+      alt: 'Temple parking area',
+      description: 'The spacious parking area outside the temple.',
     },
     {
-      src: '/images/fron.jpg',
-      alt: 'Front view of temple',
-      description: 'The front view of the temple',
+      src: '/images/Newtemplesideview.jpeg',
+      alt: 'Side view of the temple',
+      description: 'A grand side perspective of the temple’s architecture.',
+    },
+    {
+      src: '/images/night3.jpeg',
+      alt: 'Temple night lights',
+      description: 'Temple surroundings beautifully lit at night.',
     },
     {
       src: '/images/side1.jpg',
-      alt: 'Side view of temple',
-      description:
-        'Simran Darbar & Main Darbar (Outside) Langar Hall and Kitchen on Ground Floor',
+      alt: 'Side angle of the temple',
+      description: 'A distinct side view of the temple’s design.',
     },
     {
       src: '/images/up1.jpg',
-      alt: 'Top view',
-      description: 'A top view of the temple grounds',
+      alt: 'Aerial view of the temple',
+      description: 'A high-angle view capturing the temple’s layout.',
     },
-    {
-      src: '/images/hallwa.jpg',
-      alt: 'Hallway inside temple',
-      description: 'A view inside the temple hallway',
-    },
-    // Add more images as necessary
   ];
+  
 
   const [loading, setLoading] = useState(true);
 
