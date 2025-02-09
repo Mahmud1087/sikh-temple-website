@@ -48,6 +48,7 @@ const Footer: React.FC = () => {
           >
             <FaFacebook />
           </a>
+          {/*
           <a
             href="https://twitter.com/sikhtemplemombasa"
             target="_blank"
@@ -59,6 +60,7 @@ const Footer: React.FC = () => {
           </a>
         </div>
       </div>
+      */}
 
       {/* Copyright */}
       <div className="text-center text-gray-500 text-sm mt-10 px-6">
